@@ -1,0 +1,31 @@
+Repeat High-Engagement Customers
+================================================================================
+
+User ID: 1020560882.1760989769
+  Qualifying days: 3
+  Total qualifying minutes: 25.70
+  Visit dates: 2025-11-02, 2025-11-03, 2025-11-04
+  Countries: Sweden
+  Regions: Stockholm County
+  Cities: Stockholm
+  Device categories: mobile
+  Operating systems: iOS
+  Traffic sources: (direct)
+  Traffic mediums: (none)
+  Events triggered: session_start, page_view, user_engagement, click
+  Conversion events: None
+--------------------------------------------------------------------------------
+User ID: 803412122.1762199806
+  Qualifying days: 2
+  Total qualifying minutes: 17.63
+  Visit dates: 2025-11-03, 2025-11-04
+  Countries: United States
+  Regions: Connecticut
+  Cities: Bloomfield
+  Device categories: desktop
+  Operating systems: Windows
+  Traffic sources: (direct)
+  Traffic mediums: (none)
+  Events triggered: session_start, page_view, user_engagement, scroll, form_start, form_submit, view_search_results, first_visit
+  Conversion events: None
+--------------------------------------------------------------------------------

@@ -1,0 +1,64 @@
+{
+  "_comment": "Map query identifiers to default CLI arguments. Override with real values.",
+  "category_performance": [
+    "--property-id",
+    "427048881",
+    "--service-account-key",
+    "websitecountryspikes-c44a6b026c7b.json",
+    "--category-dimension",
+    "pagePathPlusQueryString",
+    "--start-date",
+    "2025-10-01",
+    "--end-date",
+    "2025-10-31"
+  ],
+  "high_traffic_low_engagement": [
+    "--property-id",
+    "427048881",
+    "--service-account-key",
+    "websitecountryspikes-c44a6b026c7b.json",
+    "--start-date",
+    "2025-10-01",
+    "--end-date",
+    "2025-10-31",
+    "--min-views",
+    "800",
+    "--max-engagement-rate",
+    "0.35"
+  ],
+  "top_revenue_recipes": [
+    "--property-id",
+    "427048881",
+    "--service-account-key",
+    "websitecountryspikes-c44a6b026c7b.json",
+    "--start-date",
+    "2025-10-01",
+    "--end-date",
+    "2025-10-31",
+    "--limit",
+    "20"
+  ],
+  "rpm_by_recipe": [
+    "--property-id",
+    "427048881",
+    "--service-account-key",
+    "websitecountryspikes-c44a6b026c7b.json",
+    "--start-date",
+    "2025-10-01",
+    "--end-date",
+    "2025-10-31",
+    "--limit",
+    "50"
+  ],
+  "hidden_gem_recipes": [
+    "--property-id",
+    "427048881",
+    "--service-account-key",
+    "websitecountryspikes-c44a6b026c7b.json",
+    "--start-date",
+    "2025-10-01",
+    "--end-date",
+    "2025-10-31"
+  ]
+}
+

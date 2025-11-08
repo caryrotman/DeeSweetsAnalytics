@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dee Sweets Analytics Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <header>
+      <h1>Dee Sweets Analytics Explorer</h1>
+      <div class="query-controls">
+        <label for="query-select" class="sr-only">Select query</label>
+        <select id="query-select">
+          <option value="" disabled selected>Select a query&hellip;</option>
+          {% for query in queries %}
+          <option value="{{ query.id }}">{{ query.title }}</option>
+          {% endfor %}
+        </select>
+        <button id="run-query">Run</button>
+        <div class="date-range">
+          <label for="from-date" class="sr-only">From date</label>
+          <input id="from-date" type="text" placeholder="MM/DD/YYYY" />
+          <label for="to-date" class="sr-only">To date</label>
+          <input id="to-date" type="text" placeholder="MM/DD/YYYY" />
+        </div>
+        <button id="download-log" disabled>Download Data</button>
+      </div>
+    </header>
+    <main>
+      <section id="output">
+        <div id="chart-container">
+          <img id="chart-image" alt="Query result chart" hidden />
+          <div id="chart-placeholder">Run a query to view its chart.</div>
+        </div>
+        <div id="status-panel">
+          <div id="message" class="info">Choose a query to begin.</div>
+          <div id="job-meta">
+            <div><strong>Query:</strong> <span id="job-query">—</span></div>
+            <div><strong>Status:</strong> <span id="job-status">Idle</span></div>
+            <div><strong>From:</strong> <span id="job-start-date">—</span></div>
+            <div><strong>To:</strong> <span id="job-end-date">—</span></div>
+            <div><strong>Started:</strong> <span id="job-started">—</span></div>
+            <div><strong>Updated:</strong> <span id="job-updated">—</span></div>
+          </div>
+          <div id="job-files" hidden>
+            <strong>Downloads:</strong>
+            <ul id="file-list"></ul>
+          </div>
+        </div>
+        <div id="log-container">
+          <label for="job-log">Execution log</label>
+          <textarea id="job-log" readonly placeholder="Logs will appear here once the query starts..."></textarea>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const runButton = document.getElementById("run-query");
+      const downloadButton = document.getElementById("download-log");
+      const select = document.getElementById("query-select");
+      const messageContainer = document.getElementById("message");
+      const fromDateInput = document.getElementById("from-date");
+      const toDateInput = document.getElementById("to-date");
+      const chartImage = document.getElementById("chart-image");
+      const chartPlaceholder = document.getElementById("chart-placeholder");
+      const jobQuery = document.getElementById("job-query");
+      const jobStatus = document.getElementById("job-status");
+      const jobStarted = document.getElementById("job-started");
+      const jobUpdated = document.getElementById("job-updated");
+      const jobFromDate = document.getElementById("job-start-date");
+      const jobToDate = document.getElementById("job-end-date");
+      const jobLog = document.getElementById("job-log");
+      const fileList = document.getElementById("file-list");
+      const jobFilesSection = document.getElementById("job-files");
+
+      let currentJobId = null;
+      let pollTimer = null;
+
+      function resetDisplay() {
+        chartImage.hidden = true;
+        chartImage.src = "";
+        chartPlaceholder.hidden = false;
+        jobLog.value = "";
+        jobFilesSection.hidden = true;
+        fileList.innerHTML = "";
+        downloadButton.disabled = true;
+        downloadButton.onclick = null;
+        jobFromDate.textContent = "—";
+        jobToDate.textContent = "—";
+        currentJobId = null;
+        if (pollTimer) {
+          clearInterval(pollTimer);
+          pollTimer = null;
+        }
+      }
+
+      function showMessage(text, type = "info") {
+        messageContainer.textContent = text;
+        messageContainer.className = type;
+      }
+
+      function updateJobMeta(data) {
+        jobQuery.textContent = data.title || select.options[select.selectedIndex]?.text || "—";
+        jobStatus.textContent = data.status || "Unknown";
+        jobStarted.textContent = data.createdAt ? new Date(data.createdAt).toLocaleString() : "—";
+        jobUpdated.textContent = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "—";
+        const params = data.parameters || {};
+        jobFromDate.textContent = params.startDate || fromDateInput.value || "—";
+        jobToDate.textContent = params.endDate || toDateInput.value || "—";
+        if (data.stdout || data.stderr) {
+          const combined = [data.stdout, data.stderr ? `\n[stderr]\n${data.stderr}` : ""].filter(Boolean).join("\n");
+          jobLog.value = combined.trim();
+          jobLog.scrollTop = jobLog.scrollHeight;
+        }
+        if (data.dataFiles?.length) {
+          jobFilesSection.hidden = false;
+          fileList.innerHTML = "";
+          data.dataFiles.forEach((file) => {
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = file.url;
+            link.textContent = file.name;
+            link.target = "_blank";
+            li.appendChild(link);
+            fileList.appendChild(li);
+          });
+          downloadButton.disabled = false;
+          downloadButton.onclick = () => {
+            data.dataFiles.forEach((file) => window.open(file.url, "_blank"));
+          };
+        }
+      }
+
+      async function runSelectedQuery() {
+        const queryName = select.value;
+        if (!queryName) {
+          showMessage("Please choose a query first.", "warning");
+          return;
+        }
+
+        resetDisplay();
+        showMessage("Launching query...", "info");
+
+        try {
+          const response = await fetch("/api/run-query", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              queryId: queryName,
+              startDate: fromDateInput.value,
+              endDate: toDateInput.value,
+            }),
+          });
+
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(payload.error || "Unexpected error");
+          }
+
+          currentJobId = payload.jobId;
+          updateJobMeta({ status: payload.status, title: payload.title });
+          showMessage("Query started. Waiting for results...", "info");
+
+          pollTimer = setInterval(async () => {
+            try {
+              const statusResponse = await fetch(`/api/jobs/${currentJobId}`);
+              const statusPayload = await statusResponse.json();
+              if (!statusResponse.ok) {
+                throw new Error(statusPayload.error || "Failed to fetch job status.");
+              }
+
+              updateJobMeta(statusPayload);
+
+              const status = statusPayload.status;
+              if (status === "running") {
+                showMessage("Query is running. Hang tight…", "info");
+              } else if (status === "completed") {
+                clearInterval(pollTimer);
+                pollTimer = null;
+                showMessage("Query completed successfully.", "success");
+                if (statusPayload.hasChart && statusPayload.chartUrl) {
+                  chartImage.src = `${statusPayload.chartUrl}?t=${Date.now()}`;
+                  chartImage.hidden = false;
+                  chartPlaceholder.hidden = true;
+                } else {
+                  showMessage("Query completed but no chart was found.", "warning");
+                }
+              } else if (status === "error") {
+                clearInterval(pollTimer);
+                pollTimer = null;
+                showMessage(statusPayload.error || "Query failed. See logs.", "error");
+              }
+            } catch (error) {
+              console.error(error);
+              showMessage(error.message, "error");
+              clearInterval(pollTimer);
+              pollTimer = null;
+            }
+          }, 3000);
+        } catch (error) {
+          console.error(error);
+          showMessage(error.message, "error");
+        }
+      }
+
+      function initializeDateInputs() {
+        fromDateInput.value = "11/02/2025";
+        const today = new Date();
+        const formatted = today.toLocaleDateString("en-US");
+        toDateInput.value = formatted;
+      }
+
+      runButton.addEventListener("click", runSelectedQuery);
+      initializeDateInputs();
+      resetDisplay();
+    </script>
+  </body>
+</html>
+

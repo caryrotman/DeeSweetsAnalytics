@@ -1,0 +1,50 @@
+User Time Buckets (counts of unique users per day)
+============================================================
+
+Date: 2025-11-02
+  0-1 min : 779
+  1-3 min : 157
+  3-5 min : 29
+  5-10 min: 22
+  10-30 min: 6
+  30+ min : 1
+
+Date: 2025-11-03
+  0-1 min : 703
+  1-3 min : 85
+  3-5 min : 22
+  5-10 min: 25
+  10-30 min: 7
+  30+ min : 0
+
+Date: 2025-11-04
+  0-1 min : 555
+  1-3 min : 102
+  3-5 min : 25
+  5-10 min: 18
+  10-30 min: 5
+  30+ min : 0
+
+Date: 2025-11-05
+  0-1 min : 401
+  1-3 min : 92
+  3-5 min : 20
+  5-10 min: 11
+  10-30 min: 5
+  30+ min : 0
+
+Date: 2025-11-06
+  0-1 min : 550
+  1-3 min : 119
+  3-5 min : 23
+  5-10 min: 17
+  10-30 min: 9
+  30+ min : 0
+
+Overall totals:
+  0-1 min : 2988
+  1-3 min : 555
+  3-5 min : 119
+  5-10 min: 93
+  10-30 min: 32
+  30+ min : 1

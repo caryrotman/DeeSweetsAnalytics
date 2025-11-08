@@ -1,0 +1,2282 @@
+week	country	total_views
+2025-06-16	Algeria	1
+2025-06-16	Argentina	8
+2025-06-16	Armenia	2
+2025-06-16	Australia	528
+2025-06-16	Austria	5
+2025-06-16	Azerbaijan	1
+2025-06-16	Bahrain	2
+2025-06-16	Barbados	2
+2025-06-16	Belgium	3
+2025-06-16	Bolivia	1
+2025-06-16	Botswana	1
+2025-06-16	Brazil	15
+2025-06-16	Bulgaria	3
+2025-06-16	Canada	627
+2025-06-16	Cayman Islands	2
+2025-06-16	Chile	11
+2025-06-16	China	1
+2025-06-16	Colombia	17
+2025-06-16	Costa Rica	1
+2025-06-16	Croatia	2
+2025-06-16	Cyprus	6
+2025-06-16	Czechia	1
+2025-06-16	Denmark	7
+2025-06-16	Dominican Republic	8
+2025-06-16	Ecuador	3
+2025-06-16	Egypt	2
+2025-06-16	Estonia	1
+2025-06-16	Fiji	2
+2025-06-16	Finland	3
+2025-06-16	France	27
+2025-06-16	Germany	54
+2025-06-16	Ghana	4
+2025-06-16	Greece	5
+2025-06-16	Guam	2
+2025-06-16	Guatemala	1
+2025-06-16	Honduras	2
+2025-06-16	Hong Kong	2
+2025-06-16	Hungary	3
+2025-06-16	Iceland	2
+2025-06-16	India	81
+2025-06-16	Indonesia	22
+2025-06-16	Iran	1
+2025-06-16	Iraq	3
+2025-06-16	Ireland	25
+2025-06-16	Israel	30
+2025-06-16	Italy	12
+2025-06-16	Japan	8
+2025-06-16	Jordan	4
+2025-06-16	Kenya	2
+2025-06-16	Kuwait	3
+2025-06-16	Lebanon	2
+2025-06-16	Lithuania	4
+2025-06-16	Malawi	1
+2025-06-16	Malaysia	9
+2025-06-16	Maldives	1
+2025-06-16	Malta	4
+2025-06-16	Mexico	60
+2025-06-16	Morocco	1
+2025-06-16	Namibia	1
+2025-06-16	Netherlands	17
+2025-06-16	New Zealand	36
+2025-06-16	Nicaragua	2
+2025-06-16	Nigeria	1
+2025-06-16	Norway	10
+2025-06-16	Oman	2
+2025-06-16	Pakistan	7
+2025-06-16	Palestine	2
+2025-06-16	Panama	6
+2025-06-16	Paraguay	2
+2025-06-16	Peru	5
+2025-06-16	Philippines	23
+2025-06-16	Poland	3
+2025-06-16	Portugal	18
+2025-06-16	Puerto Rico	11
+2025-06-16	Qatar	3
+2025-06-16	Romania	9
+2025-06-16	Saudi Arabia	27
+2025-06-16	Singapore	7
+2025-06-16	Slovakia	5
+2025-06-16	Slovenia	1
+2025-06-16	South Africa	32
+2025-06-16	South Korea	6
+2025-06-16	Spain	14
+2025-06-16	Sri Lanka	1
+2025-06-16	Sweden	20
+2025-06-16	Switzerland	15
+2025-06-16	Taiwan	1
+2025-06-16	Tanzania	1
+2025-06-16	Thailand	8
+2025-06-16	Trinidad & Tobago	4
+2025-06-16	Tunisia	3
+2025-06-16	Türkiye	4
+2025-06-16	United Arab Emirates	18
+2025-06-16	United Kingdom	209
+2025-06-16	United States	4955
+2025-06-16	Venezuela	8
+2025-06-16	Vietnam	1
+2025-06-16	Zimbabwe	1
+2025-06-23	Afghanistan	1
+2025-06-23	Algeria	1
+2025-06-23	Argentina	27
+2025-06-23	Australia	951
+2025-06-23	Austria	16
+2025-06-23	Azerbaijan	1
+2025-06-23	Bahamas	2
+2025-06-23	Bahrain	9
+2025-06-23	Barbados	5
+2025-06-23	Belgium	16
+2025-06-23	Bermuda	1
+2025-06-23	Bolivia	2
+2025-06-23	Brazil	49
+2025-06-23	Brunei	2
+2025-06-23	Bulgaria	11
+2025-06-23	Canada	1099
+2025-06-23	Cayman Islands	1
+2025-06-23	Chile	40
+2025-06-23	China	1
+2025-06-23	Colombia	30
+2025-06-23	Costa Rica	11
+2025-06-23	Croatia	12
+2025-06-23	Cuba	1
+2025-06-23	Cyprus	5
+2025-06-23	Czechia	14
+2025-06-23	Denmark	17
+2025-06-23	Dominican Republic	18
+2025-06-23	Ecuador	4
+2025-06-23	Egypt	13
+2025-06-23	El Salvador	4
+2025-06-23	Estonia	1
+2025-06-23	Fiji	1
+2025-06-23	Finland	7
+2025-06-23	France	54
+2025-06-23	Germany	117
+2025-06-23	Ghana	3
+2025-06-23	Greece	14
+2025-06-23	Grenada	1
+2025-06-23	Guadeloupe	1
+2025-06-23	Guam	4
+2025-06-23	Guatemala	15
+2025-06-23	Honduras	6
+2025-06-23	Hong Kong	8
+2025-06-23	Hungary	9
+2025-06-23	Iceland	1
+2025-06-23	India	145
+2025-06-23	Indonesia	23
+2025-06-23	Iraq	9
+2025-06-23	Ireland	78
+2025-06-23	Israel	74
+2025-06-23	Italy	28
+2025-06-23	Jamaica	1
+2025-06-23	Japan	17
+2025-06-23	Jordan	6
+2025-06-23	Kazakhstan	2
+2025-06-23	Kenya	6
+2025-06-23	Kuwait	3
+2025-06-23	Laos	1
+2025-06-23	Latvia	5
+2025-06-23	Lebanon	10
+2025-06-23	Lithuania	4
+2025-06-23	Malaysia	16
+2025-06-23	Maldives	2
+2025-06-23	Malta	6
+2025-06-23	Mauritius	3
+2025-06-23	Mexico	155
+2025-06-23	Morocco	4
+2025-06-23	Netherlands	61
+2025-06-23	New Zealand	109
+2025-06-23	Nicaragua	3
+2025-06-23	Nigeria	2
+2025-06-23	Norway	13
+2025-06-23	Oman	4
+2025-06-23	Pakistan	14
+2025-06-23	Palestine	1
+2025-06-23	Panama	4
+2025-06-23	Paraguay	5
+2025-06-23	Peru	5
+2025-06-23	Philippines	56
+2025-06-23	Poland	27
+2025-06-23	Portugal	26
+2025-06-23	Puerto Rico	23
+2025-06-23	Qatar	10
+2025-06-23	Romania	18
+2025-06-23	Russia	2
+2025-06-23	Saudi Arabia	43
+2025-06-23	Seychelles	1
+2025-06-23	Singapore	17
+2025-06-23	Slovakia	6
+2025-06-23	Slovenia	3
+2025-06-23	South Africa	70
+2025-06-23	South Korea	19
+2025-06-23	Spain	29
+2025-06-23	Sri Lanka	1
+2025-06-23	St. Vincent & Grenadines	1
+2025-06-23	Sweden	22
+2025-06-23	Switzerland	21
+2025-06-23	Syria	1
+2025-06-23	Taiwan	1
+2025-06-23	Tanzania	1
+2025-06-23	Thailand	10
+2025-06-23	Tunisia	4
+2025-06-23	Türkiye	8
+2025-06-23	United Arab Emirates	42
+2025-06-23	United Kingdom	461
+2025-06-23	United States	8778
+2025-06-23	Uruguay	7
+2025-06-23	Uzbekistan	1
+2025-06-23	Venezuela	21
+2025-06-23	Vietnam	4
+2025-06-23	Zambia	1
+2025-06-23	Zimbabwe	6
+2025-06-30	Algeria	3
+2025-06-30	Antigua & Barbuda	1
+2025-06-30	Argentina	21
+2025-06-30	Armenia	3
+2025-06-30	Aruba	2
+2025-06-30	Australia	733
+2025-06-30	Austria	12
+2025-06-30	Bahamas	2
+2025-06-30	Bahrain	3
+2025-06-30	Barbados	3
+2025-06-30	Belgium	12
+2025-06-30	Bermuda	2
+2025-06-30	Bolivia	1
+2025-06-30	Brazil	33
+2025-06-30	Brunei	1
+2025-06-30	Bulgaria	7
+2025-06-30	Canada	923
+2025-06-30	Cayman Islands	1
+2025-06-30	Chile	33
+2025-06-30	China	3
+2025-06-30	Colombia	21
+2025-06-30	Costa Rica	3
+2025-06-30	Croatia	11
+2025-06-30	Curaçao	1
+2025-06-30	Cyprus	5
+2025-06-30	Czechia	18
+2025-06-30	Denmark	16
+2025-06-30	Dominican Republic	11
+2025-06-30	Ecuador	13
+2025-06-30	Egypt	1
+2025-06-30	El Salvador	1
+2025-06-30	Finland	5
+2025-06-30	France	22
+2025-06-30	Germany	76
+2025-06-30	Ghana	2
+2025-06-30	Greece	10
+2025-06-30	Guadeloupe	1
+2025-06-30	Guam	2
+2025-06-30	Guatemala	10
+2025-06-30	Haiti	2
+2025-06-30	Honduras	2
+2025-06-30	Hong Kong	4
+2025-06-30	Hungary	8
+2025-06-30	Iceland	2
+2025-06-30	India	112
+2025-06-30	Indonesia	25
+2025-06-30	Iran	1
+2025-06-30	Iraq	2
+2025-06-30	Ireland	43
+2025-06-30	Israel	47
+2025-06-30	Italy	23
+2025-06-30	Jamaica	2
+2025-06-30	Japan	12
+2025-06-30	Jordan	5
+2025-06-30	Kenya	3
+2025-06-30	Kuwait	4
+2025-06-30	Latvia	2
+2025-06-30	Lebanon	7
+2025-06-30	Libya	1
+2025-06-30	Luxembourg	1
+2025-06-30	Malaysia	12
+2025-06-30	Malta	5
+2025-06-30	Mauritius	5
+2025-06-30	Mexico	98
+2025-06-30	Morocco	1
+2025-06-30	Nepal	1
+2025-06-30	Netherlands	40
+2025-06-30	New Caledonia	1
+2025-06-30	New Zealand	91
+2025-06-30	Nicaragua	1
+2025-06-30	Nigeria	5
+2025-06-30	Norway	14
+2025-06-30	Oman	3
+2025-06-30	Pakistan	18
+2025-06-30	Panama	1
+2025-06-30	Paraguay	1
+2025-06-30	Peru	12
+2025-06-30	Philippines	52
+2025-06-30	Poland	8
+2025-06-30	Portugal	20
+2025-06-30	Puerto Rico	24
+2025-06-30	Qatar	5
+2025-06-30	Romania	23
+2025-06-30	Russia	2
+2025-06-30	Samoa	1
+2025-06-30	Saudi Arabia	31
+2025-06-30	Seychelles	1
+2025-06-30	Singapore	25
+2025-06-30	Slovakia	3
+2025-06-30	Slovenia	1
+2025-06-30	South Africa	85
+2025-06-30	South Korea	9
+2025-06-30	Spain	23
+2025-06-30	Sri Lanka	2
+2025-06-30	Sweden	21
+2025-06-30	Switzerland	15
+2025-06-30	Taiwan	2
+2025-06-30	Thailand	8
+2025-06-30	Trinidad & Tobago	4
+2025-06-30	Tunisia	6
+2025-06-30	Türkiye	6
+2025-06-30	U.S. Virgin Islands	2
+2025-06-30	United Arab Emirates	26
+2025-06-30	United Kingdom	276
+2025-06-30	United States	7428
+2025-06-30	Uruguay	3
+2025-06-30	Uzbekistan	1
+2025-06-30	Venezuela	16
+2025-06-30	Vietnam	3
+2025-06-30	Zambia	1
+2025-06-30	Zimbabwe	3
+2025-07-07	Algeria	2
+2025-07-07	Argentina	23
+2025-07-07	Armenia	1
+2025-07-07	Aruba	1
+2025-07-07	Australia	657
+2025-07-07	Austria	8
+2025-07-07	Bahamas	1
+2025-07-07	Bahrain	16
+2025-07-07	Bangladesh	2
+2025-07-07	Barbados	1
+2025-07-07	Belgium	10
+2025-07-07	Belize	2
+2025-07-07	Bermuda	1
+2025-07-07	Botswana	2
+2025-07-07	Brazil	36
+2025-07-07	Bulgaria	5
+2025-07-07	Cameroon	1
+2025-07-07	Canada	980
+2025-07-07	Caribbean Netherlands	4
+2025-07-07	Chile	46
+2025-07-07	China	2
+2025-07-07	Colombia	15
+2025-07-07	Costa Rica	10
+2025-07-07	Croatia	11
+2025-07-07	Cyprus	3
+2025-07-07	Czechia	3
+2025-07-07	Denmark	13
+2025-07-07	Dominican Republic	11
+2025-07-07	Ecuador	6
+2025-07-07	Egypt	4
+2025-07-07	Estonia	4
+2025-07-07	Fiji	1
+2025-07-07	Finland	8
+2025-07-07	France	29
+2025-07-07	Georgia	1
+2025-07-07	Germany	105
+2025-07-07	Ghana	2
+2025-07-07	Greece	10
+2025-07-07	Guam	3
+2025-07-07	Guatemala	7
+2025-07-07	Hungary	5
+2025-07-07	Iceland	2
+2025-07-07	India	108
+2025-07-07	Indonesia	18
+2025-07-07	Iran	3
+2025-07-07	Iraq	2
+2025-07-07	Ireland	49
+2025-07-07	Israel	50
+2025-07-07	Italy	24
+2025-07-07	Jamaica	1
+2025-07-07	Japan	27
+2025-07-07	Jordan	1
+2025-07-07	Kazakhstan	1
+2025-07-07	Kenya	5
+2025-07-07	Kuwait	4
+2025-07-07	Laos	1
+2025-07-07	Latvia	4
+2025-07-07	Lebanon	7
+2025-07-07	Lithuania	5
+2025-07-07	Malaysia	8
+2025-07-07	Maldives	2
+2025-07-07	Malta	1
+2025-07-07	Martinique	1
+2025-07-07	Mexico	98
+2025-07-07	Moldova	1
+2025-07-07	Morocco	4
+2025-07-07	Netherlands	33
+2025-07-07	New Zealand	117
+2025-07-07	Nicaragua	1
+2025-07-07	Nigeria	6
+2025-07-07	Norway	5
+2025-07-07	Oman	1
+2025-07-07	Pakistan	19
+2025-07-07	Palestine	1
+2025-07-07	Panama	7
+2025-07-07	Peru	7
+2025-07-07	Philippines	38
+2025-07-07	Poland	14
+2025-07-07	Portugal	15
+2025-07-07	Puerto Rico	17
+2025-07-07	Qatar	5
+2025-07-07	Romania	13
+2025-07-07	Saudi Arabia	27
+2025-07-07	Seychelles	1
+2025-07-07	Singapore	16
+2025-07-07	Sint Maarten	1
+2025-07-07	Slovakia	12
+2025-07-07	Slovenia	1
+2025-07-07	South Africa	70
+2025-07-07	South Korea	15
+2025-07-07	Spain	29
+2025-07-07	Sri Lanka	2
+2025-07-07	St. Lucia	1
+2025-07-07	Sweden	24
+2025-07-07	Switzerland	14
+2025-07-07	Syria	1
+2025-07-07	Taiwan	1
+2025-07-07	Tanzania	2
+2025-07-07	Thailand	8
+2025-07-07	Trinidad & Tobago	5
+2025-07-07	Tunisia	2
+2025-07-07	Türkiye	10
+2025-07-07	United Arab Emirates	35
+2025-07-07	United Kingdom	350
+2025-07-07	United States	7207
+2025-07-07	Uruguay	5
+2025-07-07	Venezuela	15
+2025-07-07	Vietnam	4
+2025-07-07	Zimbabwe	2
+2025-07-14	Algeria	3
+2025-07-14	Argentina	24
+2025-07-14	Armenia	1
+2025-07-14	Australia	849
+2025-07-14	Austria	11
+2025-07-14	Azerbaijan	1
+2025-07-14	Bahamas	1
+2025-07-14	Bahrain	8
+2025-07-14	Bangladesh	1
+2025-07-14	Barbados	3
+2025-07-14	Belgium	14
+2025-07-14	Belize	2
+2025-07-14	Bermuda	1
+2025-07-14	Brazil	41
+2025-07-14	Brunei	2
+2025-07-14	Bulgaria	5
+2025-07-14	Canada	1182
+2025-07-14	Cayman Islands	1
+2025-07-14	Chile	30
+2025-07-14	China	2
+2025-07-14	Colombia	13
+2025-07-14	Costa Rica	12
+2025-07-14	Croatia	7
+2025-07-14	Curaçao	1
+2025-07-14	Cyprus	9
+2025-07-14	Czechia	4
+2025-07-14	Denmark	11
+2025-07-14	Dominica	1
+2025-07-14	Dominican Republic	17
+2025-07-14	Ecuador	16
+2025-07-14	Egypt	8
+2025-07-14	El Salvador	3
+2025-07-14	Estonia	3
+2025-07-14	Finland	6
+2025-07-14	France	45
+2025-07-14	Georgia	1
+2025-07-14	Germany	107
+2025-07-14	Greece	9
+2025-07-14	Grenada	1
+2025-07-14	Guadeloupe	2
+2025-07-14	Guam	8
+2025-07-14	Guatemala	7
+2025-07-14	Haiti	3
+2025-07-14	Honduras	5
+2025-07-14	Hong Kong	1
+2025-07-14	Hungary	10
+2025-07-14	Iceland	1
+2025-07-14	India	94
+2025-07-14	Indonesia	22
+2025-07-14	Iran	5
+2025-07-14	Iraq	1
+2025-07-14	Ireland	55
+2025-07-14	Israel	50
+2025-07-14	Italy	34
+2025-07-14	Jamaica	3
+2025-07-14	Japan	22
+2025-07-14	Jordan	5
+2025-07-14	Kenya	3
+2025-07-14	Kuwait	9
+2025-07-14	Latvia	3
+2025-07-14	Lebanon	11
+2025-07-14	Lithuania	2
+2025-07-14	Luxembourg	1
+2025-07-14	Malaysia	19
+2025-07-14	Maldives	1
+2025-07-14	Malta	1
+2025-07-14	Mauritius	1
+2025-07-14	Mexico	150
+2025-07-14	Morocco	4
+2025-07-14	Netherlands	36
+2025-07-14	New Zealand	91
+2025-07-14	Nicaragua	3
+2025-07-14	Nigeria	4
+2025-07-14	Norway	1
+2025-07-14	Oman	1
+2025-07-14	Pakistan	20
+2025-07-14	Panama	6
+2025-07-14	Paraguay	3
+2025-07-14	Peru	16
+2025-07-14	Philippines	47
+2025-07-14	Poland	18
+2025-07-14	Portugal	15
+2025-07-14	Puerto Rico	27
+2025-07-14	Qatar	5
+2025-07-14	Romania	9
+2025-07-14	Russia	2
+2025-07-14	Rwanda	1
+2025-07-14	Saudi Arabia	41
+2025-07-14	Singapore	31
+2025-07-14	Sint Maarten	1
+2025-07-14	Slovakia	5
+2025-07-14	Slovenia	2
+2025-07-14	South Africa	86
+2025-07-14	South Korea	15
+2025-07-14	Spain	39
+2025-07-14	Sri Lanka	2
+2025-07-14	St. Lucia	1
+2025-07-14	Sweden	30
+2025-07-14	Switzerland	15
+2025-07-14	Taiwan	2
+2025-07-14	Thailand	6
+2025-07-14	Trinidad & Tobago	8
+2025-07-14	Tunisia	6
+2025-07-14	Turkmenistan	1
+2025-07-14	Türkiye	13
+2025-07-14	United Arab Emirates	37
+2025-07-14	United Kingdom	370
+2025-07-14	United States	9769
+2025-07-14	Venezuela	20
+2025-07-14	Vietnam	1
+2025-07-14	Zambia	2
+2025-07-21	Algeria	2
+2025-07-21	Argentina	18
+2025-07-21	Australia	632
+2025-07-21	Austria	9
+2025-07-21	Azerbaijan	2
+2025-07-21	Bahamas	1
+2025-07-21	Bahrain	6
+2025-07-21	Bangladesh	1
+2025-07-21	Barbados	3
+2025-07-21	Belgium	12
+2025-07-21	Botswana	1
+2025-07-21	Brazil	36
+2025-07-21	Brunei	1
+2025-07-21	Bulgaria	1
+2025-07-21	Canada	937
+2025-07-21	Caribbean Netherlands	2
+2025-07-21	Chile	15
+2025-07-21	Colombia	24
+2025-07-21	Costa Rica	7
+2025-07-21	Croatia	11
+2025-07-21	Cuba	1
+2025-07-21	Curaçao	1
+2025-07-21	Cyprus	7
+2025-07-21	Czechia	5
+2025-07-21	Côte d’Ivoire	1
+2025-07-21	Denmark	6
+2025-07-21	Dominican Republic	12
+2025-07-21	Ecuador	9
+2025-07-21	Egypt	7
+2025-07-21	El Salvador	5
+2025-07-21	Estonia	6
+2025-07-21	Finland	3
+2025-07-21	France	34
+2025-07-21	French Polynesia	3
+2025-07-21	Germany	78
+2025-07-21	Ghana	1
+2025-07-21	Greece	14
+2025-07-21	Guadeloupe	1
+2025-07-21	Guam	2
+2025-07-21	Guatemala	7
+2025-07-21	Honduras	3
+2025-07-21	Hong Kong	6
+2025-07-21	Hungary	2
+2025-07-21	Iceland	2
+2025-07-21	India	122
+2025-07-21	Indonesia	39
+2025-07-21	Iran	4
+2025-07-21	Ireland	57
+2025-07-21	Israel	49
+2025-07-21	Italy	22
+2025-07-21	Jamaica	4
+2025-07-21	Japan	17
+2025-07-21	Jordan	13
+2025-07-21	Kazakhstan	1
+2025-07-21	Kenya	8
+2025-07-21	Kuwait	10
+2025-07-21	Latvia	1
+2025-07-21	Lebanon	7
+2025-07-21	Liechtenstein	1
+2025-07-21	Lithuania	2
+2025-07-21	Malawi	3
+2025-07-21	Malaysia	26
+2025-07-21	Malta	3
+2025-07-21	Mexico	138
+2025-07-21	Morocco	5
+2025-07-21	Nepal	1
+2025-07-21	Netherlands	53
+2025-07-21	New Zealand	88
+2025-07-21	Nigeria	6
+2025-07-21	Norway	7
+2025-07-21	Oman	1
+2025-07-21	Pakistan	14
+2025-07-21	Palestine	2
+2025-07-21	Panama	10
+2025-07-21	Paraguay	2
+2025-07-21	Peru	13
+2025-07-21	Philippines	57
+2025-07-21	Poland	17
+2025-07-21	Portugal	17
+2025-07-21	Puerto Rico	23
+2025-07-21	Qatar	9
+2025-07-21	Romania	8
+2025-07-21	Russia	4
+2025-07-21	Saudi Arabia	44
+2025-07-21	Singapore	19
+2025-07-21	Slovakia	4
+2025-07-21	Slovenia	4
+2025-07-21	South Africa	63
+2025-07-21	South Korea	7
+2025-07-21	Spain	31
+2025-07-21	Sri Lanka	3
+2025-07-21	Sweden	28
+2025-07-21	Switzerland	11
+2025-07-21	Taiwan	2
+2025-07-21	Tanzania	1
+2025-07-21	Thailand	10
+2025-07-21	Trinidad & Tobago	4
+2025-07-21	Türkiye	15
+2025-07-21	United Arab Emirates	31
+2025-07-21	United Kingdom	265
+2025-07-21	United States	7198
+2025-07-21	Uruguay	8
+2025-07-21	Uzbekistan	1
+2025-07-21	Venezuela	11
+2025-07-21	Vietnam	5
+2025-07-21	Zambia	1
+2025-07-21	Zimbabwe	1
+2025-07-28	Algeria	3
+2025-07-28	Argentina	40
+2025-07-28	Australia	631
+2025-07-28	Austria	16
+2025-07-28	Azerbaijan	1
+2025-07-28	Bahamas	3
+2025-07-28	Bahrain	3
+2025-07-28	Barbados	4
+2025-07-28	Belgium	7
+2025-07-28	Bermuda	1
+2025-07-28	Bolivia	2
+2025-07-28	Botswana	1
+2025-07-28	Brazil	61
+2025-07-28	British Virgin Islands	1
+2025-07-28	Brunei	5
+2025-07-28	Bulgaria	2
+2025-07-28	Canada	1025
+2025-07-28	Chile	26
+2025-07-28	China	1
+2025-07-28	Colombia	25
+2025-07-28	Costa Rica	11
+2025-07-28	Croatia	2
+2025-07-28	Cyprus	6
+2025-07-28	Czechia	14
+2025-07-28	Denmark	19
+2025-07-28	Dominican Republic	16
+2025-07-28	Ecuador	14
+2025-07-28	Egypt	3
+2025-07-28	Estonia	5
+2025-07-28	Finland	6
+2025-07-28	France	48
+2025-07-28	French Polynesia	1
+2025-07-28	Georgia	1
+2025-07-28	Germany	130
+2025-07-28	Ghana	1
+2025-07-28	Greece	13
+2025-07-28	Guam	3
+2025-07-28	Guatemala	4
+2025-07-28	Haiti	1
+2025-07-28	Honduras	4
+2025-07-28	Hong Kong	4
+2025-07-28	Hungary	13
+2025-07-28	Iceland	2
+2025-07-28	India	98
+2025-07-28	Indonesia	40
+2025-07-28	Iran	6
+2025-07-28	Iraq	4
+2025-07-28	Ireland	55
+2025-07-28	Israel	69
+2025-07-28	Italy	31
+2025-07-28	Jamaica	3
+2025-07-28	Japan	19
+2025-07-28	Jordan	8
+2025-07-28	Kazakhstan	4
+2025-07-28	Kenya	5
+2025-07-28	Kuwait	17
+2025-07-28	Latvia	1
+2025-07-28	Lebanon	14
+2025-07-28	Libya	1
+2025-07-28	Lithuania	1
+2025-07-28	Luxembourg	2
+2025-07-28	Malaysia	16
+2025-07-28	Maldives	2
+2025-07-28	Malta	2
+2025-07-28	Mauritius	1
+2025-07-28	Mexico	139
+2025-07-28	Morocco	4
+2025-07-28	Myanmar (Burma)	1
+2025-07-28	Netherlands	57
+2025-07-28	New Zealand	94
+2025-07-28	Nigeria	3
+2025-07-28	Niue	1
+2025-07-28	Norway	7
+2025-07-28	Oman	3
+2025-07-28	Pakistan	19
+2025-07-28	Palestine	1
+2025-07-28	Panama	5
+2025-07-28	Paraguay	3
+2025-07-28	Peru	14
+2025-07-28	Philippines	39
+2025-07-28	Poland	33
+2025-07-28	Portugal	13
+2025-07-28	Puerto Rico	20
+2025-07-28	Qatar	4
+2025-07-28	Romania	6
+2025-07-28	Russia	1
+2025-07-28	Rwanda	1
+2025-07-28	Réunion	2
+2025-07-28	Samoa	1
+2025-07-28	Saudi Arabia	56
+2025-07-28	Singapore	4
+2025-07-28	Slovakia	4
+2025-07-28	Slovenia	2
+2025-07-28	South Africa	80
+2025-07-28	South Korea	10
+2025-07-28	Spain	42
+2025-07-28	Sri Lanka	4
+2025-07-28	St. Lucia	2
+2025-07-28	Sweden	33
+2025-07-28	Switzerland	14
+2025-07-28	Syria	1
+2025-07-28	Taiwan	1
+2025-07-28	Tajikistan	2
+2025-07-28	Thailand	7
+2025-07-28	Trinidad & Tobago	3
+2025-07-28	Tunisia	3
+2025-07-28	Turks & Caicos Islands	1
+2025-07-28	Türkiye	20
+2025-07-28	United Arab Emirates	26
+2025-07-28	United Kingdom	324
+2025-07-28	United States	8558
+2025-07-28	Uruguay	4
+2025-07-28	Uzbekistan	2
+2025-07-28	Venezuela	24
+2025-07-28	Vietnam	1
+2025-07-28	Zambia	1
+2025-07-28	Zimbabwe	1
+2025-08-04	Algeria	2
+2025-08-04	American Samoa	2
+2025-08-04	Argentina	46
+2025-08-04	Aruba	1
+2025-08-04	Australia	529
+2025-08-04	Austria	12
+2025-08-04	Bahamas	4
+2025-08-04	Bahrain	9
+2025-08-04	Bangladesh	1
+2025-08-04	Barbados	1
+2025-08-04	Belgium	11
+2025-08-04	Bolivia	2
+2025-08-04	Brazil	49
+2025-08-04	Brunei	2
+2025-08-04	Bulgaria	5
+2025-08-04	Canada	1137
+2025-08-04	Cayman Islands	2
+2025-08-04	Chile	31
+2025-08-04	Colombia	30
+2025-08-04	Costa Rica	13
+2025-08-04	Croatia	5
+2025-08-04	Cyprus	6
+2025-08-04	Czechia	7
+2025-08-04	Denmark	10
+2025-08-04	Dominican Republic	35
+2025-08-04	Ecuador	5
+2025-08-04	Egypt	9
+2025-08-04	El Salvador	10
+2025-08-04	Estonia	2
+2025-08-04	Eswatini	2
+2025-08-04	Fiji	2
+2025-08-04	Finland	1
+2025-08-04	France	55
+2025-08-04	French Polynesia	2
+2025-08-04	Georgia	3
+2025-08-04	Germany	116
+2025-08-04	Ghana	3
+2025-08-04	Greece	12
+2025-08-04	Guam	5
+2025-08-04	Guatemala	13
+2025-08-04	Honduras	1
+2025-08-04	Hong Kong	1
+2025-08-04	Hungary	5
+2025-08-04	Iceland	1
+2025-08-04	India	133
+2025-08-04	Indonesia	39
+2025-08-04	Iran	11
+2025-08-04	Iraq	5
+2025-08-04	Ireland	66
+2025-08-04	Israel	62
+2025-08-04	Italy	19
+2025-08-04	Jamaica	7
+2025-08-04	Japan	19
+2025-08-04	Jordan	6
+2025-08-04	Kenya	3
+2025-08-04	Kuwait	22
+2025-08-04	Laos	1
+2025-08-04	Lebanon	7
+2025-08-04	Lesotho	1
+2025-08-04	Libya	2
+2025-08-04	Lithuania	3
+2025-08-04	Luxembourg	2
+2025-08-04	Malaysia	16
+2025-08-04	Malta	3
+2025-08-04	Mauritius	5
+2025-08-04	Mexico	140
+2025-08-04	Moldova	1
+2025-08-04	Morocco	4
+2025-08-04	Namibia	3
+2025-08-04	Netherlands	34
+2025-08-04	New Zealand	75
+2025-08-04	Nigeria	3
+2025-08-04	Norway	16
+2025-08-04	Oman	8
+2025-08-04	Pakistan	17
+2025-08-04	Palestine	3
+2025-08-04	Panama	8
+2025-08-04	Paraguay	1
+2025-08-04	Peru	14
+2025-08-04	Philippines	45
+2025-08-04	Poland	16
+2025-08-04	Portugal	10
+2025-08-04	Puerto Rico	29
+2025-08-04	Qatar	5
+2025-08-04	Romania	7
+2025-08-04	Rwanda	1
+2025-08-04	Saudi Arabia	44
+2025-08-04	Serbia	1
+2025-08-04	Singapore	16
+2025-08-04	Slovakia	10
+2025-08-04	Slovenia	8
+2025-08-04	South Africa	69
+2025-08-04	South Korea	11
+2025-08-04	Spain	35
+2025-08-04	Sri Lanka	2
+2025-08-04	St. Barthélemy	1
+2025-08-04	St. Vincent & Grenadines	1
+2025-08-04	Sweden	32
+2025-08-04	Switzerland	22
+2025-08-04	Taiwan	6
+2025-08-04	Tanzania	4
+2025-08-04	Thailand	10
+2025-08-04	Tonga	1
+2025-08-04	Trinidad & Tobago	3
+2025-08-04	Tunisia	1
+2025-08-04	Türkiye	12
+2025-08-04	Uganda	1
+2025-08-04	United Arab Emirates	24
+2025-08-04	United Kingdom	310
+2025-08-04	United States	8143
+2025-08-04	Uruguay	7
+2025-08-04	Vanuatu	1
+2025-08-04	Venezuela	37
+2025-08-04	Vietnam	1
+2025-08-04	Zambia	1
+2025-08-04	Zimbabwe	2
+2025-08-11	Algeria	5
+2025-08-11	Argentina	40
+2025-08-11	Australia	543
+2025-08-11	Austria	10
+2025-08-11	Azerbaijan	3
+2025-08-11	Bahamas	8
+2025-08-11	Bahrain	15
+2025-08-11	Barbados	3
+2025-08-11	Belgium	16
+2025-08-11	Belize	1
+2025-08-11	Bolivia	2
+2025-08-11	Brazil	61
+2025-08-11	Bulgaria	4
+2025-08-11	Canada	1063
+2025-08-11	Chile	34
+2025-08-11	China	2
+2025-08-11	Colombia	18
+2025-08-11	Costa Rica	6
+2025-08-11	Croatia	5
+2025-08-11	Cyprus	4
+2025-08-11	Czechia	10
+2025-08-11	Denmark	16
+2025-08-11	Dominican Republic	22
+2025-08-11	Ecuador	9
+2025-08-11	Egypt	5
+2025-08-11	El Salvador	6
+2025-08-11	Estonia	4
+2025-08-11	Eswatini	1
+2025-08-11	Fiji	1
+2025-08-11	Finland	6
+2025-08-11	France	41
+2025-08-11	Georgia	2
+2025-08-11	Germany	105
+2025-08-11	Ghana	2
+2025-08-11	Greece	13
+2025-08-11	Guadeloupe	2
+2025-08-11	Guam	2
+2025-08-11	Guatemala	4
+2025-08-11	Honduras	6
+2025-08-11	Hong Kong	3
+2025-08-11	Hungary	5
+2025-08-11	Iceland	4
+2025-08-11	India	158
+2025-08-11	Indonesia	28
+2025-08-11	Iran	6
+2025-08-11	Iraq	2
+2025-08-11	Ireland	40
+2025-08-11	Israel	64
+2025-08-11	Italy	21
+2025-08-11	Jamaica	2
+2025-08-11	Japan	26
+2025-08-11	Jordan	8
+2025-08-11	Kazakhstan	2
+2025-08-11	Kenya	1
+2025-08-11	Kuwait	14
+2025-08-11	Lebanon	11
+2025-08-11	Libya	2
+2025-08-11	Luxembourg	2
+2025-08-11	Malaysia	17
+2025-08-11	Malta	8
+2025-08-11	Martinique	1
+2025-08-11	Mauritius	2
+2025-08-11	Mexico	126
+2025-08-11	Morocco	5
+2025-08-11	Namibia	1
+2025-08-11	Netherlands	38
+2025-08-11	New Zealand	55
+2025-08-11	Nigeria	1
+2025-08-11	Norway	5
+2025-08-11	Oman	5
+2025-08-11	Pakistan	14
+2025-08-11	Palestine	2
+2025-08-11	Panama	7
+2025-08-11	Paraguay	5
+2025-08-11	Peru	9
+2025-08-11	Philippines	49
+2025-08-11	Poland	16
+2025-08-11	Portugal	12
+2025-08-11	Puerto Rico	13
+2025-08-11	Qatar	4
+2025-08-11	Romania	6
+2025-08-11	Russia	1
+2025-08-11	Saudi Arabia	40
+2025-08-11	Singapore	12
+2025-08-11	Sint Maarten	1
+2025-08-11	Slovakia	5
+2025-08-11	Slovenia	4
+2025-08-11	South Africa	84
+2025-08-11	South Korea	9
+2025-08-11	Spain	34
+2025-08-11	Sri Lanka	1
+2025-08-11	Sweden	42
+2025-08-11	Switzerland	21
+2025-08-11	Taiwan	2
+2025-08-11	Thailand	9
+2025-08-11	Trinidad & Tobago	6
+2025-08-11	Tunisia	4
+2025-08-11	Turks & Caicos Islands	1
+2025-08-11	Türkiye	8
+2025-08-11	United Arab Emirates	41
+2025-08-11	United Kingdom	287
+2025-08-11	United States	7933
+2025-08-11	Uruguay	2
+2025-08-11	Venezuela	19
+2025-08-11	Vietnam	2
+2025-08-18	Algeria	3
+2025-08-18	Argentina	23
+2025-08-18	Armenia	1
+2025-08-18	Australia	485
+2025-08-18	Austria	8
+2025-08-18	Bahamas	1
+2025-08-18	Bahrain	9
+2025-08-18	Barbados	1
+2025-08-18	Belgium	6
+2025-08-18	Belize	1
+2025-08-18	Bermuda	1
+2025-08-18	Bolivia	1
+2025-08-18	Brazil	56
+2025-08-18	British Virgin Islands	1
+2025-08-18	Brunei	2
+2025-08-18	Bulgaria	7
+2025-08-18	Cambodia	1
+2025-08-18	Canada	978
+2025-08-18	Cayman Islands	1
+2025-08-18	Chile	29
+2025-08-18	China	1
+2025-08-18	Colombia	20
+2025-08-18	Cook Islands	2
+2025-08-18	Costa Rica	5
+2025-08-18	Croatia	4
+2025-08-18	Cyprus	6
+2025-08-18	Czechia	11
+2025-08-18	Denmark	11
+2025-08-18	Dominican Republic	14
+2025-08-18	Ecuador	18
+2025-08-18	Egypt	8
+2025-08-18	El Salvador	4
+2025-08-18	Estonia	1
+2025-08-18	Fiji	1
+2025-08-18	Finland	13
+2025-08-18	France	45
+2025-08-18	Germany	117
+2025-08-18	Ghana	2
+2025-08-18	Greece	15
+2025-08-18	Guam	2
+2025-08-18	Guatemala	10
+2025-08-18	Honduras	4
+2025-08-18	Hungary	6
+2025-08-18	India	80
+2025-08-18	Indonesia	32
+2025-08-18	Iran	8
+2025-08-18	Iraq	2
+2025-08-18	Ireland	37
+2025-08-18	Israel	39
+2025-08-18	Italy	17
+2025-08-18	Jamaica	2
+2025-08-18	Japan	13
+2025-08-18	Jordan	6
+2025-08-18	Kazakhstan	1
+2025-08-18	Kenya	4
+2025-08-18	Kuwait	7
+2025-08-18	Laos	1
+2025-08-18	Lebanon	6
+2025-08-18	Madagascar	4
+2025-08-18	Malaysia	19
+2025-08-18	Malta	4
+2025-08-18	Mexico	101
+2025-08-18	Morocco	3
+2025-08-18	Nepal	1
+2025-08-18	Netherlands	39
+2025-08-18	New Zealand	83
+2025-08-18	Nigeria	6
+2025-08-18	Norway	7
+2025-08-18	Oman	1
+2025-08-18	Pakistan	14
+2025-08-18	Palestine	1
+2025-08-18	Panama	8
+2025-08-18	Peru	7
+2025-08-18	Philippines	45
+2025-08-18	Poland	22
+2025-08-18	Portugal	13
+2025-08-18	Puerto Rico	31
+2025-08-18	Qatar	5
+2025-08-18	Romania	11
+2025-08-18	Russia	3
+2025-08-18	Saudi Arabia	37
+2025-08-18	Singapore	16
+2025-08-18	Slovakia	5
+2025-08-18	Slovenia	1
+2025-08-18	South Africa	67
+2025-08-18	South Korea	16
+2025-08-18	Spain	27
+2025-08-18	Sri Lanka	7
+2025-08-18	Sweden	22
+2025-08-18	Switzerland	12
+2025-08-18	Taiwan	5
+2025-08-18	Tanzania	2
+2025-08-18	Thailand	3
+2025-08-18	Tonga	1
+2025-08-18	Trinidad & Tobago	6
+2025-08-18	Tunisia	2
+2025-08-18	Turks & Caicos Islands	1
+2025-08-18	Türkiye	18
+2025-08-18	Uganda	3
+2025-08-18	United Arab Emirates	38
+2025-08-18	United Kingdom	248
+2025-08-18	United States	8103
+2025-08-18	Uruguay	5
+2025-08-18	Venezuela	21
+2025-08-18	Vietnam	1
+2025-08-25	Algeria	1
+2025-08-25	Argentina	24
+2025-08-25	Armenia	1
+2025-08-25	Australia	384
+2025-08-25	Austria	8
+2025-08-25	Bahamas	5
+2025-08-25	Bahrain	10
+2025-08-25	Barbados	4
+2025-08-25	Belgium	14
+2025-08-25	Belize	3
+2025-08-25	Bolivia	2
+2025-08-25	Brazil	47
+2025-08-25	British Virgin Islands	1
+2025-08-25	Brunei	1
+2025-08-25	Bulgaria	5
+2025-08-25	Canada	1103
+2025-08-25	Chile	29
+2025-08-25	Colombia	25
+2025-08-25	Costa Rica	6
+2025-08-25	Croatia	2
+2025-08-25	Curaçao	1
+2025-08-25	Cyprus	3
+2025-08-25	Czechia	4
+2025-08-25	Denmark	9
+2025-08-25	Dominican Republic	25
+2025-08-25	Ecuador	17
+2025-08-25	Egypt	5
+2025-08-25	El Salvador	21
+2025-08-25	Equatorial Guinea	1
+2025-08-25	Estonia	3
+2025-08-25	Ethiopia	1
+2025-08-25	Fiji	1
+2025-08-25	Finland	6
+2025-08-25	France	44
+2025-08-25	French Polynesia	1
+2025-08-25	Germany	89
+2025-08-25	Greece	12
+2025-08-25	Guadeloupe	1
+2025-08-25	Guam	4
+2025-08-25	Guatemala	15
+2025-08-25	Honduras	6
+2025-08-25	Hong Kong	2
+2025-08-25	Hungary	4
+2025-08-25	Iceland	1
+2025-08-25	India	72
+2025-08-25	Indonesia	36
+2025-08-25	Iran	7
+2025-08-25	Ireland	41
+2025-08-25	Israel	54
+2025-08-25	Italy	16
+2025-08-25	Jamaica	2
+2025-08-25	Japan	21
+2025-08-25	Jordan	3
+2025-08-25	Kenya	4
+2025-08-25	Kuwait	7
+2025-08-25	Latvia	1
+2025-08-25	Lebanon	6
+2025-08-25	Libya	1
+2025-08-25	Lithuania	6
+2025-08-25	Malaysia	15
+2025-08-25	Malta	2
+2025-08-25	Martinique	2
+2025-08-25	Mexico	183
+2025-08-25	Morocco	1
+2025-08-25	Nepal	2
+2025-08-25	Netherlands	38
+2025-08-25	New Zealand	57
+2025-08-25	Nicaragua	1
+2025-08-25	Nigeria	6
+2025-08-25	Norway	6
+2025-08-25	Oman	8
+2025-08-25	Pakistan	7
+2025-08-25	Palestine	2
+2025-08-25	Panama	7
+2025-08-25	Paraguay	1
+2025-08-25	Peru	13
+2025-08-25	Philippines	82
+2025-08-25	Poland	28
+2025-08-25	Portugal	14
+2025-08-25	Puerto Rico	35
+2025-08-25	Qatar	2
+2025-08-25	Romania	15
+2025-08-25	Russia	2
+2025-08-25	Réunion	3
+2025-08-25	Saudi Arabia	32
+2025-08-25	Sierra Leone	1
+2025-08-25	Singapore	25
+2025-08-25	Slovakia	3
+2025-08-25	Slovenia	2
+2025-08-25	South Africa	59
+2025-08-25	South Korea	14
+2025-08-25	Spain	18
+2025-08-25	Sri Lanka	2
+2025-08-25	Sweden	27
+2025-08-25	Switzerland	13
+2025-08-25	Taiwan	6
+2025-08-25	Tanzania	2
+2025-08-25	Thailand	10
+2025-08-25	Trinidad & Tobago	5
+2025-08-25	Tunisia	8
+2025-08-25	Türkiye	13
+2025-08-25	United Arab Emirates	17
+2025-08-25	United Kingdom	262
+2025-08-25	United States	9502
+2025-08-25	Uruguay	7
+2025-08-25	Venezuela	25
+2025-08-25	Zambia	1
+2025-08-25	Zimbabwe	2
+2025-09-01	Algeria	1
+2025-09-01	Argentina	27
+2025-09-01	Armenia	1
+2025-09-01	Australia	399
+2025-09-01	Austria	8
+2025-09-01	Azerbaijan	1
+2025-09-01	Bahrain	16
+2025-09-01	Belgium	14
+2025-09-01	Belize	1
+2025-09-01	Bermuda	1
+2025-09-01	Bolivia	2
+2025-09-01	Brazil	49
+2025-09-01	British Virgin Islands	1
+2025-09-01	Bulgaria	2
+2025-09-01	Cambodia	1
+2025-09-01	Canada	1086
+2025-09-01	Chile	34
+2025-09-01	China	2
+2025-09-01	Colombia	22
+2025-09-01	Costa Rica	6
+2025-09-01	Croatia	5
+2025-09-01	Curaçao	1
+2025-09-01	Cyprus	9
+2025-09-01	Czechia	5
+2025-09-01	Denmark	6
+2025-09-01	Dominican Republic	14
+2025-09-01	Ecuador	12
+2025-09-01	Egypt	6
+2025-09-01	Estonia	2
+2025-09-01	Fiji	1
+2025-09-01	Finland	9
+2025-09-01	France	30
+2025-09-01	Germany	86
+2025-09-01	Ghana	3
+2025-09-01	Greece	8
+2025-09-01	Guadeloupe	1
+2025-09-01	Guam	4
+2025-09-01	Guatemala	16
+2025-09-01	Honduras	4
+2025-09-01	Hong Kong	2
+2025-09-01	Hungary	1
+2025-09-01	Iceland	3
+2025-09-01	India	57
+2025-09-01	Indonesia	18
+2025-09-01	Iran	7
+2025-09-01	Iraq	2
+2025-09-01	Ireland	31
+2025-09-01	Israel	38
+2025-09-01	Italy	13
+2025-09-01	Jamaica	2
+2025-09-01	Japan	19
+2025-09-01	Jordan	2
+2025-09-01	Kazakhstan	3
+2025-09-01	Kenya	4
+2025-09-01	Kuwait	24
+2025-09-01	Lebanon	7
+2025-09-01	Liberia	1
+2025-09-01	Libya	1
+2025-09-01	Madagascar	1
+2025-09-01	Malaysia	16
+2025-09-01	Mauritius	1
+2025-09-01	Mexico	167
+2025-09-01	Montserrat	1
+2025-09-01	Morocco	6
+2025-09-01	Netherlands	32
+2025-09-01	New Zealand	60
+2025-09-01	Nicaragua	1
+2025-09-01	Nigeria	3
+2025-09-01	Norway	4
+2025-09-01	Oman	2
+2025-09-01	Pakistan	7
+2025-09-01	Palestine	4
+2025-09-01	Panama	9
+2025-09-01	Paraguay	4
+2025-09-01	Peru	19
+2025-09-01	Philippines	42
+2025-09-01	Poland	16
+2025-09-01	Portugal	14
+2025-09-01	Puerto Rico	27
+2025-09-01	Qatar	8
+2025-09-01	Romania	11
+2025-09-01	Russia	3
+2025-09-01	Réunion	1
+2025-09-01	Saudi Arabia	34
+2025-09-01	Singapore	13
+2025-09-01	Slovakia	2
+2025-09-01	Slovenia	1
+2025-09-01	South Africa	36
+2025-09-01	South Korea	17
+2025-09-01	Spain	31
+2025-09-01	Sri Lanka	2
+2025-09-01	Sweden	32
+2025-09-01	Switzerland	10
+2025-09-01	Syria	1
+2025-09-01	Thailand	6
+2025-09-01	Trinidad & Tobago	5
+2025-09-01	Tunisia	4
+2025-09-01	Türkiye	14
+2025-09-01	United Arab Emirates	44
+2025-09-01	United Kingdom	270
+2025-09-01	United States	9344
+2025-09-01	Uruguay	2
+2025-09-01	Uzbekistan	1
+2025-09-01	Venezuela	28
+2025-09-08	Algeria	1
+2025-09-08	Angola	1
+2025-09-08	Argentina	32
+2025-09-08	Armenia	1
+2025-09-08	Australia	386
+2025-09-08	Austria	10
+2025-09-08	Azerbaijan	2
+2025-09-08	Bahamas	1
+2025-09-08	Bahrain	4
+2025-09-08	Bangladesh	1
+2025-09-08	Barbados	5
+2025-09-08	Belgium	13
+2025-09-08	Bermuda	1
+2025-09-08	Bolivia	3
+2025-09-08	Brazil	34
+2025-09-08	British Virgin Islands	1
+2025-09-08	Bulgaria	2
+2025-09-08	Cambodia	1
+2025-09-08	Canada	799
+2025-09-08	Cayman Islands	3
+2025-09-08	Chile	23
+2025-09-08	Colombia	30
+2025-09-08	Costa Rica	9
+2025-09-08	Croatia	4
+2025-09-08	Cyprus	4
+2025-09-08	Czechia	4
+2025-09-08	Denmark	16
+2025-09-08	Dominican Republic	20
+2025-09-08	Ecuador	9
+2025-09-08	Egypt	4
+2025-09-08	El Salvador	1
+2025-09-08	Fiji	1
+2025-09-08	Finland	2
+2025-09-08	France	34
+2025-09-08	French Polynesia	1
+2025-09-08	Georgia	2
+2025-09-08	Germany	71
+2025-09-08	Ghana	1
+2025-09-08	Greece	11
+2025-09-08	Guam	1
+2025-09-08	Guatemala	5
+2025-09-08	Hong Kong	1
+2025-09-08	Hungary	9
+2025-09-08	Iceland	2
+2025-09-08	India	67
+2025-09-08	Indonesia	17
+2025-09-08	Iran	2
+2025-09-08	Ireland	35
+2025-09-08	Israel	38
+2025-09-08	Italy	23
+2025-09-08	Jamaica	6
+2025-09-08	Japan	15
+2025-09-08	Jordan	7
+2025-09-08	Kazakhstan	2
+2025-09-08	Kenya	4
+2025-09-08	Kuwait	8
+2025-09-08	Laos	1
+2025-09-08	Lebanon	15
+2025-09-08	Lithuania	2
+2025-09-08	Malaysia	11
+2025-09-08	Malta	1
+2025-09-08	Mauritius	3
+2025-09-08	Mexico	97
+2025-09-08	Morocco	5
+2025-09-08	Nepal	1
+2025-09-08	Netherlands	50
+2025-09-08	New Zealand	53
+2025-09-08	Nicaragua	1
+2025-09-08	Nigeria	4
+2025-09-08	Norway	7
+2025-09-08	Oman	2
+2025-09-08	Pakistan	9
+2025-09-08	Panama	4
+2025-09-08	Peru	8
+2025-09-08	Philippines	41
+2025-09-08	Poland	15
+2025-09-08	Portugal	15
+2025-09-08	Puerto Rico	19
+2025-09-08	Qatar	5
+2025-09-08	Romania	5
+2025-09-08	Russia	2
+2025-09-08	Saudi Arabia	33
+2025-09-08	Senegal	1
+2025-09-08	Singapore	13
+2025-09-08	Slovakia	2
+2025-09-08	Slovenia	4
+2025-09-08	South Africa	32
+2025-09-08	South Korea	9
+2025-09-08	Spain	22
+2025-09-08	Sri Lanka	1
+2025-09-08	St. Vincent & Grenadines	1
+2025-09-08	Sweden	22
+2025-09-08	Switzerland	8
+2025-09-08	Taiwan	4
+2025-09-08	Thailand	9
+2025-09-08	Trinidad & Tobago	2
+2025-09-08	Tunisia	2
+2025-09-08	Türkiye	11
+2025-09-08	United Arab Emirates	30
+2025-09-08	United Kingdom	211
+2025-09-08	United States	6610
+2025-09-08	Uruguay	4
+2025-09-08	Uzbekistan	1
+2025-09-08	Venezuela	22
+2025-09-08	Zambia	1
+2025-09-08	Zimbabwe	1
+2025-09-15	Albania	1
+2025-09-15	Algeria	3
+2025-09-15	Argentina	31
+2025-09-15	Armenia	4
+2025-09-15	Australia	402
+2025-09-15	Austria	4
+2025-09-15	Bahamas	3
+2025-09-15	Bahrain	9
+2025-09-15	Belgium	13
+2025-09-15	Bermuda	1
+2025-09-15	Bolivia	4
+2025-09-15	Brazil	29
+2025-09-15	Bulgaria	2
+2025-09-15	Cambodia	1
+2025-09-15	Canada	755
+2025-09-15	Cayman Islands	4
+2025-09-15	Chile	26
+2025-09-15	Colombia	14
+2025-09-15	Costa Rica	5
+2025-09-15	Croatia	11
+2025-09-15	Cyprus	7
+2025-09-15	Czechia	2
+2025-09-15	Denmark	13
+2025-09-15	Dominican Republic	14
+2025-09-15	Ecuador	16
+2025-09-15	Egypt	5
+2025-09-15	El Salvador	2
+2025-09-15	Estonia	3
+2025-09-15	Finland	9
+2025-09-15	France	38
+2025-09-15	French Guiana	2
+2025-09-15	Georgia	2
+2025-09-15	Germany	77
+2025-09-15	Ghana	1
+2025-09-15	Greece	11
+2025-09-15	Guadeloupe	2
+2025-09-15	Guam	1
+2025-09-15	Guatemala	6
+2025-09-15	Honduras	8
+2025-09-15	Hungary	4
+2025-09-15	Iceland	2
+2025-09-15	India	66
+2025-09-15	Indonesia	24
+2025-09-15	Iran	6
+2025-09-15	Ireland	40
+2025-09-15	Israel	41
+2025-09-15	Italy	20
+2025-09-15	Jamaica	3
+2025-09-15	Japan	21
+2025-09-15	Jordan	7
+2025-09-15	Kazakhstan	5
+2025-09-15	Kenya	3
+2025-09-15	Kuwait	11
+2025-09-15	Lebanon	7
+2025-09-15	Libya	1
+2025-09-15	Luxembourg	1
+2025-09-15	Malawi	2
+2025-09-15	Malaysia	15
+2025-09-15	Malta	3
+2025-09-15	Mauritius	1
+2025-09-15	Mexico	130
+2025-09-15	Morocco	6
+2025-09-15	Namibia	1
+2025-09-15	Netherlands	24
+2025-09-15	New Zealand	45
+2025-09-15	Nicaragua	1
+2025-09-15	Nigeria	5
+2025-09-15	Norway	5
+2025-09-15	Oman	9
+2025-09-15	Pakistan	13
+2025-09-15	Palestine	1
+2025-09-15	Panama	10
+2025-09-15	Paraguay	3
+2025-09-15	Peru	4
+2025-09-15	Philippines	37
+2025-09-15	Poland	14
+2025-09-15	Portugal	14
+2025-09-15	Puerto Rico	29
+2025-09-15	Qatar	13
+2025-09-15	Romania	13
+2025-09-15	Saudi Arabia	59
+2025-09-15	Singapore	7
+2025-09-15	Sint Maarten	2
+2025-09-15	Slovakia	2
+2025-09-15	Slovenia	4
+2025-09-15	South Africa	53
+2025-09-15	South Korea	14
+2025-09-15	Spain	26
+2025-09-15	Sri Lanka	1
+2025-09-15	St. Pierre & Miquelon	1
+2025-09-15	Sweden	17
+2025-09-15	Switzerland	8
+2025-09-15	Taiwan	4
+2025-09-15	Thailand	5
+2025-09-15	Trinidad & Tobago	3
+2025-09-15	Tunisia	8
+2025-09-15	Türkiye	11
+2025-09-15	Ukraine	1
+2025-09-15	United Arab Emirates	35
+2025-09-15	United Kingdom	282
+2025-09-15	United States	6570
+2025-09-15	Uzbekistan	3
+2025-09-15	Venezuela	18
+2025-09-15	Vietnam	1
+2025-09-15	Western Sahara	1
+2025-09-22	Algeria	4
+2025-09-22	Argentina	22
+2025-09-22	Armenia	2
+2025-09-22	Aruba	1
+2025-09-22	Australia	311
+2025-09-22	Austria	4
+2025-09-22	Bahamas	2
+2025-09-22	Bahrain	8
+2025-09-22	Barbados	4
+2025-09-22	Belgium	16
+2025-09-22	Bermuda	1
+2025-09-22	Bolivia	2
+2025-09-22	Brazil	43
+2025-09-22	Bulgaria	2
+2025-09-22	Canada	775
+2025-09-22	Cayman Islands	1
+2025-09-22	Chile	11
+2025-09-22	China	3
+2025-09-22	Colombia	29
+2025-09-22	Costa Rica	16
+2025-09-22	Croatia	5
+2025-09-22	Cyprus	10
+2025-09-22	Czechia	2
+2025-09-22	Denmark	14
+2025-09-22	Dominica	1
+2025-09-22	Dominican Republic	10
+2025-09-22	Ecuador	6
+2025-09-22	Egypt	5
+2025-09-22	El Salvador	1
+2025-09-22	Estonia	2
+2025-09-22	Finland	2
+2025-09-22	France	43
+2025-09-22	Georgia	2
+2025-09-22	Germany	66
+2025-09-22	Ghana	2
+2025-09-22	Greece	9
+2025-09-22	Guam	1
+2025-09-22	Guatemala	4
+2025-09-22	Honduras	4
+2025-09-22	Hong Kong	2
+2025-09-22	Hungary	8
+2025-09-22	Iceland	1
+2025-09-22	India	41
+2025-09-22	Indonesia	16
+2025-09-22	Iran	2
+2025-09-22	Iraq	2
+2025-09-22	Ireland	45
+2025-09-22	Israel	20
+2025-09-22	Italy	19
+2025-09-22	Japan	19
+2025-09-22	Jordan	4
+2025-09-22	Kazakhstan	3
+2025-09-22	Kenya	2
+2025-09-22	Kuwait	10
+2025-09-22	Latvia	6
+2025-09-22	Lebanon	5
+2025-09-22	Lithuania	1
+2025-09-22	Malawi	1
+2025-09-22	Malaysia	8
+2025-09-22	Malta	5
+2025-09-22	Mauritius	1
+2025-09-22	Mexico	147
+2025-09-22	Mongolia	1
+2025-09-22	Morocco	13
+2025-09-22	Mozambique	3
+2025-09-22	Namibia	1
+2025-09-22	Netherlands	39
+2025-09-22	New Caledonia	1
+2025-09-22	New Zealand	39
+2025-09-22	Nicaragua	4
+2025-09-22	Nigeria	4
+2025-09-22	Norway	3
+2025-09-22	Oman	1
+2025-09-22	Pakistan	10
+2025-09-22	Palestine	2
+2025-09-22	Panama	10
+2025-09-22	Paraguay	1
+2025-09-22	Peru	14
+2025-09-22	Philippines	39
+2025-09-22	Poland	11
+2025-09-22	Portugal	13
+2025-09-22	Puerto Rico	23
+2025-09-22	Qatar	7
+2025-09-22	Romania	10
+2025-09-22	Réunion	1
+2025-09-22	Saudi Arabia	29
+2025-09-22	Singapore	12
+2025-09-22	Slovakia	5
+2025-09-22	Slovenia	3
+2025-09-22	South Africa	37
+2025-09-22	South Korea	12
+2025-09-22	Spain	21
+2025-09-22	Sweden	17
+2025-09-22	Switzerland	10
+2025-09-22	Taiwan	6
+2025-09-22	Thailand	5
+2025-09-22	Trinidad & Tobago	6
+2025-09-22	Tunisia	4
+2025-09-22	Türkiye	5
+2025-09-22	United Arab Emirates	39
+2025-09-22	United Kingdom	203
+2025-09-22	United States	5989
+2025-09-22	Uruguay	1
+2025-09-22	Venezuela	14
+2025-09-22	Vietnam	2
+2025-09-29	Algeria	2
+2025-09-29	Antigua & Barbuda	1
+2025-09-29	Argentina	25
+2025-09-29	Armenia	2
+2025-09-29	Australia	398
+2025-09-29	Austria	4
+2025-09-29	Azerbaijan	1
+2025-09-29	Bahamas	1
+2025-09-29	Bahrain	3
+2025-09-29	Barbados	4
+2025-09-29	Belgium	9
+2025-09-29	Bolivia	5
+2025-09-29	Brazil	56
+2025-09-29	Brunei	1
+2025-09-29	Bulgaria	2
+2025-09-29	Canada	740
+2025-09-29	Caribbean Netherlands	2
+2025-09-29	Chile	14
+2025-09-29	China	5
+2025-09-29	Colombia	16
+2025-09-29	Costa Rica	9
+2025-09-29	Croatia	10
+2025-09-29	Curaçao	5
+2025-09-29	Cyprus	7
+2025-09-29	Czechia	8
+2025-09-29	Denmark	13
+2025-09-29	Dominican Republic	13
+2025-09-29	Ecuador	7
+2025-09-29	Egypt	5
+2025-09-29	El Salvador	2
+2025-09-29	Estonia	3
+2025-09-29	Finland	7
+2025-09-29	France	41
+2025-09-29	Georgia	2
+2025-09-29	Germany	91
+2025-09-29	Ghana	12
+2025-09-29	Greece	5
+2025-09-29	Guam	3
+2025-09-29	Guatemala	7
+2025-09-29	Honduras	7
+2025-09-29	Hong Kong	3
+2025-09-29	Hungary	8
+2025-09-29	Iceland	1
+2025-09-29	India	66
+2025-09-29	Indonesia	24
+2025-09-29	Iran	3
+2025-09-29	Ireland	40
+2025-09-29	Israel	49
+2025-09-29	Italy	26
+2025-09-29	Japan	12
+2025-09-29	Jordan	10
+2025-09-29	Kenya	1
+2025-09-29	Kuwait	14
+2025-09-29	Latvia	1
+2025-09-29	Lebanon	8
+2025-09-29	Libya	2
+2025-09-29	Luxembourg	2
+2025-09-29	Malawi	1
+2025-09-29	Malaysia	16
+2025-09-29	Malta	3
+2025-09-29	Martinique	1
+2025-09-29	Mauritius	2
+2025-09-29	Mexico	115
+2025-09-29	Morocco	2
+2025-09-29	Netherlands	29
+2025-09-29	New Zealand	41
+2025-09-29	Nigeria	2
+2025-09-29	Norway	12
+2025-09-29	Oman	4
+2025-09-29	Pakistan	10
+2025-09-29	Palestine	1
+2025-09-29	Panama	6
+2025-09-29	Papua New Guinea	1
+2025-09-29	Peru	6
+2025-09-29	Philippines	39
+2025-09-29	Poland	17
+2025-09-29	Portugal	8
+2025-09-29	Puerto Rico	25
+2025-09-29	Qatar	20
+2025-09-29	Romania	7
+2025-09-29	Réunion	2
+2025-09-29	Saudi Arabia	57
+2025-09-29	Seychelles	1
+2025-09-29	Singapore	11
+2025-09-29	Slovakia	4
+2025-09-29	Slovenia	3
+2025-09-29	South Africa	44
+2025-09-29	South Korea	6
+2025-09-29	Spain	19
+2025-09-29	Sri Lanka	3
+2025-09-29	Suriname	1
+2025-09-29	Sweden	28
+2025-09-29	Switzerland	14
+2025-09-29	Taiwan	2
+2025-09-29	Thailand	16
+2025-09-29	Trinidad & Tobago	4
+2025-09-29	Tunisia	2
+2025-09-29	Türkiye	11
+2025-09-29	United Arab Emirates	34
+2025-09-29	United Kingdom	243
+2025-09-29	United States	6078
+2025-09-29	Uruguay	3
+2025-09-29	Venezuela	24
+2025-09-29	Vietnam	3
+2025-10-06	Algeria	2
+2025-10-06	Antigua & Barbuda	1
+2025-10-06	Argentina	24
+2025-10-06	Armenia	2
+2025-10-06	Aruba	2
+2025-10-06	Australia	280
+2025-10-06	Austria	5
+2025-10-06	Bahrain	3
+2025-10-06	Bangladesh	1
+2025-10-06	Barbados	3
+2025-10-06	Belgium	14
+2025-10-06	Belize	1
+2025-10-06	Bolivia	2
+2025-10-06	Brazil	50
+2025-10-06	British Virgin Islands	2
+2025-10-06	Bulgaria	3
+2025-10-06	Canada	916
+2025-10-06	Cayman Islands	1
+2025-10-06	Chile	19
+2025-10-06	China	7
+2025-10-06	Colombia	24
+2025-10-06	Costa Rica	4
+2025-10-06	Croatia	9
+2025-10-06	Cyprus	10
+2025-10-06	Czechia	6
+2025-10-06	Denmark	13
+2025-10-06	Dominican Republic	11
+2025-10-06	Ecuador	6
+2025-10-06	Egypt	5
+2025-10-06	El Salvador	2
+2025-10-06	Fiji	1
+2025-10-06	Finland	4
+2025-10-06	France	33
+2025-10-06	French Polynesia	1
+2025-10-06	Gabon	2
+2025-10-06	Germany	83
+2025-10-06	Ghana	2
+2025-10-06	Greece	13
+2025-10-06	Guadeloupe	4
+2025-10-06	Guatemala	13
+2025-10-06	Honduras	2
+2025-10-06	Hong Kong	1
+2025-10-06	Hungary	3
+2025-10-06	Iceland	1
+2025-10-06	India	58
+2025-10-06	Indonesia	11
+2025-10-06	Iran	3
+2025-10-06	Iraq	1
+2025-10-06	Ireland	39
+2025-10-06	Israel	48
+2025-10-06	Italy	12
+2025-10-06	Jamaica	1
+2025-10-06	Japan	4
+2025-10-06	Jordan	4
+2025-10-06	Kazakhstan	2
+2025-10-06	Kenya	2
+2025-10-06	Kuwait	2
+2025-10-06	Latvia	2
+2025-10-06	Lebanon	5
+2025-10-06	Libya	2
+2025-10-06	Lithuania	2
+2025-10-06	Luxembourg	2
+2025-10-06	Macao	1
+2025-10-06	Malaysia	23
+2025-10-06	Malta	3
+2025-10-06	Mauritius	1
+2025-10-06	Mexico	116
+2025-10-06	Morocco	7
+2025-10-06	Netherlands	20
+2025-10-06	New Zealand	46
+2025-10-06	Nigeria	4
+2025-10-06	Norway	6
+2025-10-06	Oman	8
+2025-10-06	Pakistan	7
+2025-10-06	Panama	8
+2025-10-06	Paraguay	2
+2025-10-06	Peru	10
+2025-10-06	Philippines	59
+2025-10-06	Poland	11
+2025-10-06	Portugal	12
+2025-10-06	Puerto Rico	16
+2025-10-06	Qatar	8
+2025-10-06	Romania	9
+2025-10-06	Russia	1
+2025-10-06	Saudi Arabia	48
+2025-10-06	Singapore	11
+2025-10-06	Slovakia	5
+2025-10-06	Slovenia	2
+2025-10-06	South Africa	36
+2025-10-06	South Korea	22
+2025-10-06	Spain	30
+2025-10-06	Sri Lanka	2
+2025-10-06	St. Lucia	1
+2025-10-06	Sweden	25
+2025-10-06	Switzerland	9
+2025-10-06	Taiwan	3
+2025-10-06	Tanzania	2
+2025-10-06	Thailand	3
+2025-10-06	Trinidad & Tobago	3
+2025-10-06	Tunisia	2
+2025-10-06	Türkiye	10
+2025-10-06	United Arab Emirates	43
+2025-10-06	United Kingdom	242
+2025-10-06	United States	8013
+2025-10-06	Uruguay	3
+2025-10-06	Venezuela	17
+2025-10-06	Vietnam	1
+2025-10-13	Algeria	1
+2025-10-13	Antigua & Barbuda	1
+2025-10-13	Argentina	17
+2025-10-13	Armenia	1
+2025-10-13	Aruba	2
+2025-10-13	Australia	377
+2025-10-13	Austria	4
+2025-10-13	Bahamas	1
+2025-10-13	Bahrain	4
+2025-10-13	Belgium	15
+2025-10-13	Belize	2
+2025-10-13	Bermuda	1
+2025-10-13	Bolivia	2
+2025-10-13	Brazil	37
+2025-10-13	Bulgaria	8
+2025-10-13	Canada	1035
+2025-10-13	Cayman Islands	1
+2025-10-13	Chile	15
+2025-10-13	China	5
+2025-10-13	Colombia	13
+2025-10-13	Costa Rica	9
+2025-10-13	Croatia	4
+2025-10-13	Cuba	1
+2025-10-13	Cyprus	11
+2025-10-13	Czechia	5
+2025-10-13	Denmark	20
+2025-10-13	Dominican Republic	10
+2025-10-13	Ecuador	7
+2025-10-13	Egypt	8
+2025-10-13	El Salvador	2
+2025-10-13	Estonia	1
+2025-10-13	Fiji	1
+2025-10-13	Finland	2
+2025-10-13	France	39
+2025-10-13	Gabon	1
+2025-10-13	Germany	65
+2025-10-13	Ghana	1
+2025-10-13	Greece	7
+2025-10-13	Guadeloupe	1
+2025-10-13	Guam	1
+2025-10-13	Guatemala	3
+2025-10-13	Honduras	2
+2025-10-13	Hungary	5
+2025-10-13	Iceland	2
+2025-10-13	India	50
+2025-10-13	Indonesia	30
+2025-10-13	Iran	1
+2025-10-13	Iraq	1
+2025-10-13	Ireland	47
+2025-10-13	Israel	37
+2025-10-13	Italy	7
+2025-10-13	Jamaica	10
+2025-10-13	Japan	13
+2025-10-13	Jordan	2
+2025-10-13	Kazakhstan	3
+2025-10-13	Kenya	2
+2025-10-13	Kuwait	7
+2025-10-13	Laos	1
+2025-10-13	Latvia	1
+2025-10-13	Lebanon	2
+2025-10-13	Libya	2
+2025-10-13	Luxembourg	1
+2025-10-13	Malawi	1
+2025-10-13	Malaysia	17
+2025-10-13	Malta	3
+2025-10-13	Mauritius	1
+2025-10-13	Mexico	114
+2025-10-13	Micronesia	1
+2025-10-13	Morocco	10
+2025-10-13	Mozambique	3
+2025-10-13	Netherlands	31
+2025-10-13	New Zealand	52
+2025-10-13	Nigeria	2
+2025-10-13	Norway	10
+2025-10-13	Oman	4
+2025-10-13	Pakistan	8
+2025-10-13	Palestine	1
+2025-10-13	Panama	6
+2025-10-13	Papua New Guinea	1
+2025-10-13	Paraguay	2
+2025-10-13	Peru	6
+2025-10-13	Philippines	37
+2025-10-13	Poland	14
+2025-10-13	Portugal	14
+2025-10-13	Puerto Rico	25
+2025-10-13	Qatar	6
+2025-10-13	Romania	14
+2025-10-13	Saudi Arabia	32
+2025-10-13	Seychelles	1
+2025-10-13	Singapore	13
+2025-10-13	Slovakia	1
+2025-10-13	South Africa	35
+2025-10-13	South Korea	3
+2025-10-13	Spain	20
+2025-10-13	St. Lucia	1
+2025-10-13	Sweden	29
+2025-10-13	Switzerland	13
+2025-10-13	Taiwan	3
+2025-10-13	Tanzania	1
+2025-10-13	Thailand	2
+2025-10-13	Trinidad & Tobago	6
+2025-10-13	Tunisia	5
+2025-10-13	Turks & Caicos Islands	1
+2025-10-13	Türkiye	7
+2025-10-13	U.S. Virgin Islands	1
+2025-10-13	United Arab Emirates	22
+2025-10-13	United Kingdom	289
+2025-10-13	United States	9042
+2025-10-13	Uruguay	4
+2025-10-13	Venezuela	10
+2025-10-13	Vietnam	2
+2025-10-20	Algeria	1
+2025-10-20	Antigua & Barbuda	1
+2025-10-20	Argentina	15
+2025-10-20	Armenia	2
+2025-10-20	Australia	405
+2025-10-20	Austria	10
+2025-10-20	Bahamas	2
+2025-10-20	Bahrain	4
+2025-10-20	Bangladesh	1
+2025-10-20	Belgium	13
+2025-10-20	Bolivia	1
+2025-10-20	Brazil	43
+2025-10-20	Brunei	2
+2025-10-20	Bulgaria	10
+2025-10-20	Cambodia	1
+2025-10-20	Canada	1150
+2025-10-20	Cayman Islands	5
+2025-10-20	Chile	18
+2025-10-20	China	25
+2025-10-20	Colombia	23
+2025-10-20	Costa Rica	4
+2025-10-20	Croatia	3
+2025-10-20	Curaçao	1
+2025-10-20	Cyprus	4
+2025-10-20	Czechia	6
+2025-10-20	Denmark	14
+2025-10-20	Dominican Republic	18
+2025-10-20	Ecuador	4
+2025-10-20	Egypt	8
+2025-10-20	El Salvador	12
+2025-10-20	Estonia	2
+2025-10-20	Finland	14
+2025-10-20	France	59
+2025-10-20	Gabon	2
+2025-10-20	Georgia	2
+2025-10-20	Germany	122
+2025-10-20	Ghana	2
+2025-10-20	Greece	9
+2025-10-20	Grenada	1
+2025-10-20	Guadeloupe	1
+2025-10-20	Guam	1
+2025-10-20	Guatemala	8
+2025-10-20	Haiti	2
+2025-10-20	Honduras	12
+2025-10-20	Hong Kong	2
+2025-10-20	Hungary	4
+2025-10-20	Iceland	2
+2025-10-20	India	45
+2025-10-20	Indonesia	20
+2025-10-20	Iran	1
+2025-10-20	Ireland	61
+2025-10-20	Israel	57
+2025-10-20	Italy	37
+2025-10-20	Jamaica	2
+2025-10-20	Japan	20
+2025-10-20	Jordan	10
+2025-10-20	Kazakhstan	1
+2025-10-20	Kenya	3
+2025-10-20	Kuwait	8
+2025-10-20	Latvia	4
+2025-10-20	Lebanon	6
+2025-10-20	Lithuania	3
+2025-10-20	Luxembourg	2
+2025-10-20	Madagascar	1
+2025-10-20	Malawi	1
+2025-10-20	Malaysia	29
+2025-10-20	Maldives	1
+2025-10-20	Malta	7
+2025-10-20	Marshall Islands	1
+2025-10-20	Martinique	1
+2025-10-20	Mauritius	2
+2025-10-20	Mexico	131
+2025-10-20	Morocco	5
+2025-10-20	Mozambique	1
+2025-10-20	Nepal	1
+2025-10-20	Netherlands	52
+2025-10-20	New Zealand	69
+2025-10-20	Nigeria	4
+2025-10-20	Norway	7
+2025-10-20	Oman	6
+2025-10-20	Pakistan	16
+2025-10-20	Panama	9
+2025-10-20	Papua New Guinea	1
+2025-10-20	Paraguay	1
+2025-10-20	Peru	7
+2025-10-20	Philippines	55
+2025-10-20	Poland	29
+2025-10-20	Portugal	13
+2025-10-20	Puerto Rico	23
+2025-10-20	Qatar	11
+2025-10-20	Romania	17
+2025-10-20	Russia	2
+2025-10-20	Rwanda	1
+2025-10-20	Réunion	4
+2025-10-20	Saudi Arabia	49
+2025-10-20	Singapore	23
+2025-10-20	Slovakia	2
+2025-10-20	Slovenia	4
+2025-10-20	South Africa	56
+2025-10-20	South Korea	10
+2025-10-20	Spain	37
+2025-10-20	Sri Lanka	3
+2025-10-20	Sweden	31
+2025-10-20	Switzerland	24
+2025-10-20	Taiwan	3
+2025-10-20	Thailand	6
+2025-10-20	Trinidad & Tobago	10
+2025-10-20	Tunisia	5
+2025-10-20	Türkiye	16
+2025-10-20	United Arab Emirates	26
+2025-10-20	United Kingdom	386
+2025-10-20	United States	13672
+2025-10-20	Uruguay	3
+2025-10-20	Venezuela	18
+2025-10-20	Vietnam	5
+2025-10-20	Zimbabwe	2
+2025-10-27	Algeria	2
+2025-10-27	American Samoa	2
+2025-10-27	Antigua & Barbuda	1
+2025-10-27	Argentina	16
+2025-10-27	Armenia	1
+2025-10-27	Aruba	1
+2025-10-27	Australia	680
+2025-10-27	Austria	11
+2025-10-27	Azerbaijan	1
+2025-10-27	Bahamas	5
+2025-10-27	Bahrain	1
+2025-10-27	Barbados	3
+2025-10-27	Belgium	25
+2025-10-27	Bolivia	2
+2025-10-27	Brazil	44
+2025-10-27	Bulgaria	4
+2025-10-27	Canada	1530
+2025-10-27	Caribbean Netherlands	1
+2025-10-27	Cayman Islands	4
+2025-10-27	Chile	22
+2025-10-27	China	69
+2025-10-27	Colombia	11
+2025-10-27	Costa Rica	14
+2025-10-27	Croatia	10
+2025-10-27	Curaçao	1
+2025-10-27	Cyprus	18
+2025-10-27	Czechia	9
+2025-10-27	Denmark	26
+2025-10-27	Dominican Republic	19
+2025-10-27	Ecuador	5
+2025-10-27	Egypt	6
+2025-10-27	El Salvador	1
+2025-10-27	Eswatini	1
+2025-10-27	Fiji	2
+2025-10-27	Finland	4
+2025-10-27	France	59
+2025-10-27	French Guiana	1
+2025-10-27	French Polynesia	2
+2025-10-27	Georgia	4
+2025-10-27	Germany	103
+2025-10-27	Ghana	3
+2025-10-27	Greece	14
+2025-10-27	Grenada	2
+2025-10-27	Guadeloupe	1
+2025-10-27	Guam	8
+2025-10-27	Guatemala	29
+2025-10-27	Honduras	3
+2025-10-27	Hong Kong	6
+2025-10-27	Hungary	10
+2025-10-27	Iceland	3
+2025-10-27	India	49
+2025-10-27	Indonesia	22
+2025-10-27	Iran	7
+2025-10-27	Iraq	4
+2025-10-27	Ireland	42
+2025-10-27	Israel	49
+2025-10-27	Italy	29
+2025-10-27	Jamaica	1
+2025-10-27	Japan	26
+2025-10-27	Jordan	11
+2025-10-27	Kazakhstan	3
+2025-10-27	Kenya	6
+2025-10-27	Kuwait	9
+2025-10-27	Lebanon	13
+2025-10-27	Libya	1
+2025-10-27	Lithuania	3
+2025-10-27	Luxembourg	1
+2025-10-27	Malaysia	13
+2025-10-27	Maldives	1
+2025-10-27	Malta	1
+2025-10-27	Mauritius	1
+2025-10-27	Mexico	217
+2025-10-27	Morocco	8
+2025-10-27	Namibia	2
+2025-10-27	Netherlands	46
+2025-10-27	New Zealand	83
+2025-10-27	Nicaragua	1
+2025-10-27	Nigeria	5
+2025-10-27	Norway	9
+2025-10-27	Oman	2
+2025-10-27	Pakistan	13
+2025-10-27	Panama	11
+2025-10-27	Paraguay	1
+2025-10-27	Peru	10
+2025-10-27	Philippines	42
+2025-10-27	Poland	25
+2025-10-27	Portugal	27
+2025-10-27	Puerto Rico	41
+2025-10-27	Qatar	2
+2025-10-27	Romania	15
+2025-10-27	Russia	2
+2025-10-27	Rwanda	1
+2025-10-27	Réunion	1
+2025-10-27	Saudi Arabia	50
+2025-10-27	Senegal	2
+2025-10-27	Seychelles	1
+2025-10-27	Sierra Leone	1
+2025-10-27	Singapore	50
+2025-10-27	Sint Maarten	1
+2025-10-27	Slovakia	6
+2025-10-27	Slovenia	1
+2025-10-27	South Africa	78
+2025-10-27	South Korea	21
+2025-10-27	Spain	40
+2025-10-27	Sweden	38
+2025-10-27	Switzerland	17
+2025-10-27	Taiwan	2
+2025-10-27	Thailand	14
+2025-10-27	Togo	1
+2025-10-27	Trinidad & Tobago	7
+2025-10-27	Tunisia	2
+2025-10-27	Türkiye	10
+2025-10-27	United Arab Emirates	32
+2025-10-27	United Kingdom	464
+2025-10-27	United States	16152
+2025-10-27	Uruguay	1
+2025-10-27	Uzbekistan	1
+2025-10-27	Venezuela	23
+2025-10-27	Vietnam	7
+2025-11-03	Antigua & Barbuda	1
+2025-11-03	Argentina	13
+2025-11-03	Armenia	2
+2025-11-03	Australia	236
+2025-11-03	Austria	11
+2025-11-03	Bahamas	1
+2025-11-03	Bahrain	5
+2025-11-03	Barbados	5
+2025-11-03	Belgium	7
+2025-11-03	Brazil	10
+2025-11-03	Bulgaria	7
+2025-11-03	Cambodia	3
+2025-11-03	Canada	560
+2025-11-03	Cayman Islands	1
+2025-11-03	Chile	10
+2025-11-03	China	14
+2025-11-03	Colombia	8
+2025-11-03	Costa Rica	3
+2025-11-03	Croatia	2
+2025-11-03	Cyprus	7
+2025-11-03	Czechia	6
+2025-11-03	Denmark	16
+2025-11-03	Dominica	1
+2025-11-03	Dominican Republic	5
+2025-11-03	Ecuador	5
+2025-11-03	Egypt	1
+2025-11-03	El Salvador	1
+2025-11-03	Estonia	3
+2025-11-03	Ethiopia	2
+2025-11-03	Finland	17
+2025-11-03	France	31
+2025-11-03	Georgia	2
+2025-11-03	Germany	58
+2025-11-03	Greece	8
+2025-11-03	Guadeloupe	2
+2025-11-03	Guam	2
+2025-11-03	Guatemala	7
+2025-11-03	Honduras	2
+2025-11-03	Hong Kong	5
+2025-11-03	Hungary	12
+2025-11-03	Iceland	1
+2025-11-03	India	37
+2025-11-03	Indonesia	10
+2025-11-03	Iran	4
+2025-11-03	Iraq	3
+2025-11-03	Ireland	27
+2025-11-03	Israel	22
+2025-11-03	Italy	20
+2025-11-03	Jamaica	1
+2025-11-03	Japan	10
+2025-11-03	Jordan	2
+2025-11-03	Kazakhstan	6
+2025-11-03	Kenya	2
+2025-11-03	Kuwait	5
+2025-11-03	Latvia	11
+2025-11-03	Lebanon	13
+2025-11-03	Lesotho	1
+2025-11-03	Luxembourg	3
+2025-11-03	Malaysia	9
+2025-11-03	Malta	1
+2025-11-03	Mauritius	1
+2025-11-03	Mexico	55
+2025-11-03	Morocco	4
+2025-11-03	Mozambique	4
+2025-11-03	Namibia	1
+2025-11-03	Netherlands	21
+2025-11-03	New Zealand	42
+2025-11-03	Nicaragua	2
+2025-11-03	Norway	6
+2025-11-03	Oman	2
+2025-11-03	Pakistan	7
+2025-11-03	Palestine	1
+2025-11-03	Panama	2
+2025-11-03	Peru	9
+2025-11-03	Philippines	22
+2025-11-03	Poland	15
+2025-11-03	Portugal	11
+2025-11-03	Puerto Rico	10
+2025-11-03	Qatar	3
+2025-11-03	Romania	17
+2025-11-03	Rwanda	1
+2025-11-03	Saudi Arabia	32
+2025-11-03	Singapore	18
+2025-11-03	Slovakia	5
+2025-11-03	South Africa	41
+2025-11-03	South Korea	1
+2025-11-03	Spain	32
+2025-11-03	Sri Lanka	3
+2025-11-03	Sweden	23
+2025-11-03	Switzerland	9
+2025-11-03	São Tomé & Príncipe	1
+2025-11-03	Taiwan	3
+2025-11-03	Thailand	5
+2025-11-03	Togo	2
+2025-11-03	Trinidad & Tobago	12
+2025-11-03	Tunisia	1
+2025-11-03	Türkiye	3
+2025-11-03	Uganda	1
+2025-11-03	United Arab Emirates	11
+2025-11-03	United Kingdom	228
+2025-11-03	United States	6049
+2025-11-03	Uruguay	4
+2025-11-03	Venezuela	9
+2025-11-03	Vietnam	1
+2025-11-03	Zambia	1
