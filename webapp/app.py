@@ -383,5 +383,11 @@ def create_app() -> Flask:
 
 if __name__ == "__main__":
     debug_mode = os.environ.get("FLASK_DEBUG", "0") == "1"
-    create_app().run(host="127.0.0.1", port=5000, debug=debug_mode)
+    host = os.environ.get("APP_HOST", "127.0.0.1")
+    port_env = os.environ.get("APP_PORT", "5000")
+    try:
+        port = int(port_env)
+    except ValueError:
+        raise ValueError(f"Invalid APP_PORT value '{port_env}'. Expected an integer.")
+    create_app().run(host=host, port=port, debug=debug_mode)
 
