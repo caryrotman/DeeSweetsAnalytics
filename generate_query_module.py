@@ -24,6 +24,7 @@ import textwrap
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, Tuple
+from string import Template
 
 DEFAULT_OUTPUT_DIR = Path("Queries")
 
@@ -90,17 +91,18 @@ def create_module_code(
     doc_sql = textwrap.indent(sql, "    ")
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    template = """#!/usr/bin/env python3
+    template = textwrap.dedent(
+        """#!/usr/bin/env python3
 """
 Auto-generated query module.
 
-Generated on __TIMESTAMP__ by generate_query_module.py.
+Generated on ${TIMESTAMP} by generate_query_module.py.
 
-Query Name: __QUERY_NAME_TEXT__
-Recommended Visualization: __CHART_TEXT__
+Query Name: ${QUERY_NAME_TEXT}
+Recommended Visualization: ${CHART_TEXT}
 
 Original SQL:
-__DOC_SQL__
+${DOC_SQL}
 """
 
 from __future__ import annotations
@@ -113,9 +115,9 @@ from pathlib import Path
 import pandas as pd
 from google.cloud import bigquery
 
-QUERY_NAME = __QUERY_NAME__
-RECOMMENDED_CHART = __CHART__
-SQL = __SQL__
+QUERY_NAME = ${QUERY_NAME}
+RECOMMENDED_CHART = ${CHART}
+SQL = ${SQL}
 DEFAULT_PROJECT = os.getenv("GCP_PROJECT", "websitecountryspikes")
 DEFAULT_DATASET = os.getenv("GA_DATASET_ID", "analytics_427048881")
 
@@ -139,7 +141,7 @@ def main() -> None:
     parser.add_argument("--dataset", default=DEFAULT_DATASET, help="BigQuery dataset ID (used for placeholder replacement)")
     parser.add_argument(
         "--output-prefix",
-        default=__BASE_FILENAME__,
+        default=${BASE_FILENAME},
         help="Prefix for CSV output",
     )
     parser.add_argument("--start-date", help="Optional date range start label")
@@ -202,18 +204,20 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 """
-
-    return (
-        template
-        .replace("__TIMESTAMP__", timestamp)
-        .replace("__QUERY_NAME_TEXT__", query_name)
-        .replace("__CHART_TEXT__", chart_suggestion)
-        .replace("__DOC_SQL__", doc_sql)
-        .replace("__QUERY_NAME__", repr(query_name))
-        .replace("__CHART__", repr(chart_suggestion))
-        .replace("__SQL__", repr(sql))
-        .replace("__BASE_FILENAME__", repr(base_filename))
     )
+
+    substitutions = {
+        "TIMESTAMP": timestamp,
+        "QUERY_NAME_TEXT": query_name,
+        "CHART_TEXT": chart_suggestion,
+        "DOC_SQL": doc_sql,
+        "QUERY_NAME": repr(query_name),
+        "CHART": repr(chart_suggestion),
+        "SQL": repr(sql),
+        "BASE_FILENAME": repr(base_filename),
+    }
+
+    return Template(template).substitute(substitutions)
 
 
 def ensure_output_dir(path: Path) -> None:
