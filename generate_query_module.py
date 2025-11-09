@@ -90,18 +90,18 @@ def create_module_code(
     doc_sql = textwrap.indent(sql, "    ")
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    template = f"""#!/usr/bin/env python3
-\"\"\"
+    template = """#!/usr/bin/env python3
+"""
 Auto-generated query module.
 
-Generated on {timestamp} by generate_query_module.py.
+Generated on __TIMESTAMP__ by generate_query_module.py.
 
-Query Name: {query_name}
-Recommended Visualization: {chart_suggestion}
+Query Name: __QUERY_NAME_TEXT__
+Recommended Visualization: __CHART_TEXT__
 
 Original SQL:
-{doc_sql}
-\"\"\"
+__DOC_SQL__
+"""
 
 from __future__ import annotations
 
@@ -113,9 +113,9 @@ from pathlib import Path
 import pandas as pd
 from google.cloud import bigquery
 
-QUERY_NAME = {query_name!r}
-RECOMMENDED_CHART = {chart_suggestion!r}
-SQL = {sql!r}
+QUERY_NAME = __QUERY_NAME__
+RECOMMENDED_CHART = __CHART__
+SQL = __SQL__
 DEFAULT_PROJECT = os.getenv("GCP_PROJECT", "websitecountryspikes")
 DEFAULT_DATASET = os.getenv("GA_DATASET_ID", "analytics_427048881")
 
@@ -134,12 +134,12 @@ def run_query(project: str, dataset: str) -> pd.DataFrame:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=f"Run '{{QUERY_NAME}}' query")
+    parser = argparse.ArgumentParser(description=f"Run '{QUERY_NAME}' query")
     parser.add_argument("--project", default=DEFAULT_PROJECT, help="GCP project ID")
     parser.add_argument("--dataset", default=DEFAULT_DATASET, help="BigQuery dataset ID (used for placeholder replacement)")
     parser.add_argument(
         "--output-prefix",
-        default={base_filename!r},
+        default=__BASE_FILENAME__,
         help="Prefix for CSV output",
     )
     parser.add_argument("--start-date", help="Optional date range start label")
@@ -202,7 +202,18 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 """
-    return template
+
+    return (
+        template
+        .replace("__TIMESTAMP__", timestamp)
+        .replace("__QUERY_NAME_TEXT__", query_name)
+        .replace("__CHART_TEXT__", chart_suggestion)
+        .replace("__DOC_SQL__", doc_sql)
+        .replace("__QUERY_NAME__", repr(query_name))
+        .replace("__CHART__", repr(chart_suggestion))
+        .replace("__SQL__", repr(sql))
+        .replace("__BASE_FILENAME__", repr(base_filename))
+    )
 
 
 def ensure_output_dir(path: Path) -> None:
