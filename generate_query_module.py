@@ -88,12 +88,14 @@ def create_module_code(
     chart_suggestion: str,
     sql: str,
 ) -> str:
+    from string import Template
+    
     doc_sql = textwrap.indent(sql, "    ")
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    template = textwrap.dedent(
-        """#!/usr/bin/env python3
-"""
+    # Build the template as a single string
+    template_str = '''#!/usr/bin/env python3
+\'\'\'
 Auto-generated query module.
 
 Generated on ${TIMESTAMP} by generate_query_module.py.
@@ -103,7 +105,7 @@ Recommended Visualization: ${CHART_TEXT}
 
 Original SQL:
 ${DOC_SQL}
-"""
+\'\'\'
 
 from __future__ import annotations
 
@@ -203,8 +205,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-"""
-    )
+'''
 
     substitutions = {
         "TIMESTAMP": timestamp,
@@ -217,7 +218,7 @@ if __name__ == "__main__":
         "BASE_FILENAME": repr(base_filename),
     }
 
-    return Template(template).substitute(substitutions)
+    return Template(template_str).substitute(substitutions)
 
 
 def ensure_output_dir(path: Path) -> None:
