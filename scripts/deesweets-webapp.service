@@ -1,0 +1,17 @@
+[Unit]
+Description=Dee Sweets Analytics Web Application
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/DeeSweetsAnalytics
+Environment="PATH=/home/ubuntu/DeeSweetsAnalytics/webapp/.venv/bin"
+Environment="GOOGLE_APPLICATION_CREDENTIALS=/home/ubuntu/websitecountryspikes-c44a6b026c7b.json"
+ExecStart=/home/ubuntu/DeeSweetsAnalytics/webapp/.venv/bin/python webapp/app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
