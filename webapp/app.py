@@ -13,18 +13,27 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
-from flask import Flask, abort, jsonify, render_template, request, send_file
+from flask import Flask, abort, jsonify, render_template, request, send_file, url_for
 
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
 QUERY_DIR = PROJECT_ROOT / "Queries"
 CONFIG_PATH = BASE_DIR / "query_config.json"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".svg"}
 DATA_EXTENSIONS = {".csv", ".txt", ".tsv", ".json", ".parquet"}
 FILE_PATTERN = re.compile(r"(?P<path>[^\s\"']+\.(?:png|jpg|jpeg|svg|csv|txt|tsv|json|parquet))", re.IGNORECASE)
 DATE_INPUT_FORMATS = ("%Y-%m-%d", "%m/%d/%Y", "%m-%d-%Y")
+
+try:
+    from generate_query_module import create_module_code, infer_chart, infer_name, slugify
+except ImportError:  # pragma: no cover
+    create_module_code = infer_chart = infer_name = slugify = None
 
 
 def normalize_date_input(value: str | None) -> str | None:
@@ -200,6 +209,21 @@ def run_query_script(job_id: str, query: QueryDefinition, overrides: Dict[str, s
     stdout, stderr = process.communicate()
 
     result = parse_generated_files(stdout, stderr)
+    extra_files: list[Path] = []
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    safe_query = re.sub(r"[^A-Za-z0-9_-]+", "-", query.identifier).strip("-") or "query"
+    if stdout.strip():
+        stdout_file = OUTPUT_DIR / f"{safe_query}_{timestamp}_{job_id[:8]}_output.txt"
+        stdout_file.write_text(stdout, encoding="utf-8")
+        extra_files.append(stdout_file)
+    if stderr.strip():
+        stderr_file = OUTPUT_DIR / f"{safe_query}_{timestamp}_{job_id[:8]}_stderr.txt"
+        stderr_file.write_text(stderr, encoding="utf-8")
+        extra_files.append(stderr_file)
+
+    result.data_files.extend(extra_files)
     job_manager.set_result(job_id, result)
 
     if process.returncode != 0:
@@ -279,7 +303,48 @@ def create_app() -> Flask:
     @app.route("/")
     def index() -> str:
         queries = [serialize_query(q) for q in discover_queries()]
-        return render_template("index.html", queries=queries)
+        initial_query = request.args.get("selected", "")
+        autorun = request.args.get("autorun", "0") == "1"
+        return render_template(
+            "index.html",
+            queries=queries,
+            initial_query=initial_query,
+            autorun=autorun,
+        )
+
+    @app.route("/queries/new", methods=["GET"])
+    def new_query() -> str:
+        return render_template("new_query.html")
+
+    @app.route("/api/queries", methods=["POST"])
+    def api_create_query():
+        if create_module_code is None:
+            return jsonify({"error": "Query generator is unavailable on this server."}), 500
+
+        payload = request.get_json(force=True, silent=True) or {}
+        sql = (payload.get("sql") or "").strip()
+        name_override = (payload.get("name") or "").strip()
+        if not sql:
+            return jsonify({"error": "SQL is required."}), 400
+
+        try:
+            query_name = name_override or infer_name(sql)
+            chart_suggestion = infer_chart(sql)
+            base_slug = slugify(query_name) or f"query-{uuid.uuid4().hex[:8]}"
+            unique_slug = base_slug
+            suffix = 1
+            while (QUERY_DIR / f"{unique_slug}.py").exists():
+                unique_slug = f"{base_slug}-{suffix}"
+                suffix += 1
+
+            module_code = create_module_code(unique_slug, query_name, chart_suggestion, sql)
+            QUERY_DIR.mkdir(parents=True, exist_ok=True)
+            module_path = QUERY_DIR / f"{unique_slug}.py"
+            module_path.write_text(module_code, encoding="utf-8")
+        except Exception as exc:  # pragma: no cover
+            return jsonify({"error": f"Failed to generate query: {exc}"}), 500
+
+        return jsonify({"queryId": unique_slug, "queryName": query_name})
 
     @app.route("/api/queries", methods=["GET"])
     def api_queries():
@@ -325,6 +390,22 @@ def create_app() -> Flask:
 
         return jsonify({"jobId": job["id"], "status": job["status"], "title": definition.title})
 
+    @app.route("/api/queries/<query_id>", methods=["DELETE"])
+    def api_delete_query(query_id: str):
+        script_path = QUERY_DIR / f"{query_id}.py"
+        if not script_path.exists():
+            return jsonify({"error": f"Query '{query_id}' not found."}), 404
+
+        backup_path = script_path.with_suffix(script_path.suffix + "_old")
+        suffix = 1
+        candidate = backup_path
+        while candidate.exists():
+            candidate = script_path.with_suffix(script_path.suffix + f"_old{suffix}")
+            suffix += 1
+
+        script_path.rename(candidate)
+        return jsonify({"message": "Query archived.", "backup": candidate.name})
+
     @app.route("/api/jobs/<job_id>", methods=["GET"])
     def api_job_status(job_id: str):
         job = job_manager.get_job(job_id)
@@ -334,6 +415,7 @@ def create_app() -> Flask:
         response = dict(job)
         # Hide internal paths from the client; expose only availability flags.
         response["hasChart"] = bool(job.get("chartPath"))
+        response["queryId"] = job.get("query")
         response["dataFiles"] = [
             {
                 "name": Path(path).name,

@@ -16,6 +16,7 @@ Example:
 import argparse
 import os
 from datetime import datetime
+from pathlib import Path
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import DateRange, Dimension, Metric, OrderBy, RunReportRequest
@@ -81,6 +82,8 @@ def main():
         print("No data returned.")
         return
 
+    records = []
+
     for idx, row in enumerate(response.rows, start=1):
         page_url = row.dimension_values[0].value or "(not set)"
         revenue = float(row.metric_values[0].value or 0)
@@ -91,6 +94,51 @@ def main():
             f"{idx:<5} {page_url[:60]:<60} "
             f"${revenue:>10,.2f} {engaged_sessions:>18} {format_seconds(avg_session_seconds):>16}"
         )
+
+        records.append(
+            {
+                "rank": idx,
+                "page_url": page_url,
+                "total_ad_revenue": revenue,
+                "engaged_sessions": engaged_sessions,
+                "avg_session_duration_seconds": avg_session_seconds,
+            }
+        )
+
+    try:
+        import pandas as pd  # type: ignore
+
+        df = pd.DataFrame(records)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        prefix = "top_revenue_recipes"
+        csv_path = Path(f"{prefix}_{ts}.csv")
+        df.to_csv(csv_path, index=False)
+        print(f"Saved CSV to {csv_path}")
+
+        try:
+            import matplotlib.pyplot as plt  # type: ignore
+
+            top = df.head(20)
+            if not top.empty:
+                plt.figure(figsize=(14, 7))
+                plt.barh(top["page_url"], top["total_ad_revenue"], color="#5B4B8A")
+                plt.xlabel("Total Ad Revenue")
+                plt.ylabel("Page URL")
+                plt.title("Top Revenue Recipe Pages")
+                plt.gca().invert_yaxis()
+                plt.tight_layout()
+                chart_path = Path(f"{prefix}_{ts}.png")
+                plt.savefig(chart_path)
+                plt.close()
+                print(f"Saved chart to {chart_path}")
+            else:
+                print("Insufficient data to render chart.")
+        except ImportError:
+            print("matplotlib not installed; skipping chart generation.")
+        except Exception as exc:
+            print(f"Failed to build chart: {exc}")
+    except ImportError:
+        print("pandas not installed; skipping CSV/chart generation.")
 
 
 if __name__ == "__main__":

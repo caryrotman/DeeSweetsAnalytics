@@ -166,6 +166,8 @@ def main():
         print(f"Saved bar chart to {chart_path}")
     elif plt is None:
         print("matplotlib not installed; skipping chart generation.")
+    else:
+        print("No chart was produced; insufficient numeric data.")
 
 
 if __name__ == "__main__":

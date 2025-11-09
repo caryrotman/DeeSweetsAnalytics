@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Query</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body class="create-query-page">
+    <header class="create-query-header">
+      <h1>Create a New Query</h1>
+      <a class="link-button" href="{{ url_for('index') }}">← Back to Explorer</a>
+    </header>
+    <main class="create-query-main">
+      <form class="create-query-form" action="#" method="post" onsubmit="return false;">
+        <label for="query-text">Query Definition</label>
+        <textarea id="query-text" name="query" placeholder="Paste or type your query script here..." rows="18"></textarea>
+        <div id="status-message" class="form-status" aria-live="polite"></div>
+        <button id="create-query-button" disabled>Create</button>
+      </form>
+    </main>
+    <script>
+      const queryText = document.getElementById("query-text");
+      const createButton = document.getElementById("create-query-button");
+      const statusMessage = document.getElementById("status-message");
+
+      queryText.addEventListener("input", () => {
+        createButton.disabled = queryText.value.trim().length === 0;
+      });
+
+      function showStatus(message, type = "info") {
+        statusMessage.textContent = message;
+        statusMessage.className = `form-status ${type}`;
+      }
+
+      async function handleCreate() {
+        const sql = queryText.value.trim();
+        if (!sql) {
+          showStatus("Please enter a query before creating.", "warning");
+          return;
+        }
+
+        createButton.disabled = true;
+        showStatus("Creating query...", "info");
+
+        try {
+          const response = await fetch("/api/queries", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sql }),
+          });
+
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(payload.error || "Failed to create query.");
+          }
+
+          showStatus("Query created. Redirecting...", "success");
+          const params = new URLSearchParams({
+            selected: payload.queryId,
+            autorun: "1",
+          });
+          window.location.href = `/${params.toString() ? "?" + params.toString() : ""}`;
+        } catch (error) {
+          console.error(error);
+          showStatus(error.message, "error");
+          createButton.disabled = false;
+        }
+      }
+
+      createButton.addEventListener("click", handleCreate);
+    </script>
+  </body>
+</html>
+

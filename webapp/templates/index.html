@@ -6,25 +6,30 @@
     <title>Dee Sweets Analytics Explorer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
-  <body>
+  <body data-initial-query="{{ initial_query }}" data-autorun="{{ 1 if autorun else 0 }}">
     <header>
       <h1>Dee Sweets Analytics Explorer</h1>
+      <div class="header-actions">
+        <a href="{{ url_for('new_query') }}" class="link-button">Create New Query</a>
+      </div>
       <div class="query-controls">
         <label for="query-select" class="sr-only">Select query</label>
         <select id="query-select">
-          <option value="" disabled selected>Select a query&hellip;</option>
+          <option value="" disabled>Select a query&hellip;</option>
           {% for query in queries %}
-          <option value="{{ query.id }}">{{ query.title }}</option>
+          <option value="{{ query.id }}"{% if query.id == initial_query %} selected{% endif %}>{{ query.title }}</option>
           {% endfor %}
         </select>
-        <button id="run-query">Run</button>
         <div class="date-range">
           <label for="from-date" class="sr-only">From date</label>
           <input id="from-date" type="text" placeholder="MM/DD/YYYY" />
+          <label class="separator" aria-hidden="true">→</label>
           <label for="to-date" class="sr-only">To date</label>
           <input id="to-date" type="text" placeholder="MM/DD/YYYY" />
         </div>
+        <button id="run-query" class="accent">Run</button>
         <button id="download-log" disabled>Download Data</button>
+        <button id="delete-query" class="danger" disabled>Delete Selected Query</button>
       </div>
     </header>
     <main>
@@ -57,6 +62,8 @@
 
     <script>
       const runButton = document.getElementById("run-query");
+      const initialQueryId = document.body.dataset.initialQuery;
+      const shouldAutorun = document.body.dataset.autorun === "1";
       const downloadButton = document.getElementById("download-log");
       const select = document.getElementById("query-select");
       const messageContainer = document.getElementById("message");
@@ -71,11 +78,14 @@
       const jobFromDate = document.getElementById("job-start-date");
       const jobToDate = document.getElementById("job-end-date");
       const jobLog = document.getElementById("job-log");
+      const deleteButton = document.getElementById("delete-query");
       const fileList = document.getElementById("file-list");
       const jobFilesSection = document.getElementById("job-files");
 
       let currentJobId = null;
       let pollTimer = null;
+      let currentJobFiles = [];
+      let currentQueryId = null;
 
       function resetDisplay() {
         chartImage.hidden = true;
@@ -86,9 +96,13 @@
         fileList.innerHTML = "";
         downloadButton.disabled = true;
         downloadButton.onclick = null;
+        deleteButton.disabled = !select.value;
+        deleteButton.onclick = select.value ? () => deleteSelectedQuery(select.value) : null;
         jobFromDate.textContent = "—";
         jobToDate.textContent = "—";
         currentJobId = null;
+        currentJobFiles = [];
+        currentQueryId = null;
         if (pollTimer) {
           clearInterval(pollTimer);
           pollTimer = null;
@@ -113,10 +127,16 @@
           jobLog.value = combined.trim();
           jobLog.scrollTop = jobLog.scrollHeight;
         }
-        if (data.dataFiles?.length) {
+        currentJobFiles = data.dataFiles ?? [];
+        downloadButton.disabled = currentJobFiles.length === 0;
+        downloadButton.onclick = currentJobFiles.length ? handleDownloadClick : null;
+        currentQueryId = data.queryId || select.value || null;
+        deleteButton.disabled = !currentQueryId && !select.value;
+        deleteButton.onclick = currentQueryId ? () => deleteSelectedQuery(currentQueryId) : select.value ? () => deleteSelectedQuery(select.value) : null;
+        if (currentJobFiles.length) {
           jobFilesSection.hidden = false;
           fileList.innerHTML = "";
-          data.dataFiles.forEach((file) => {
+          currentJobFiles.forEach((file) => {
             const li = document.createElement("li");
             const link = document.createElement("a");
             link.href = file.url;
@@ -125,11 +145,19 @@
             li.appendChild(link);
             fileList.appendChild(li);
           });
-          downloadButton.disabled = false;
-          downloadButton.onclick = () => {
-            data.dataFiles.forEach((file) => window.open(file.url, "_blank"));
-          };
         }
+      }
+
+      function handleDownloadClick() {
+        if (!currentJobId) {
+          showMessage("Run a query before downloading.", "warning");
+          return;
+        }
+        if (!currentJobFiles.length) {
+          showMessage("This query did not produce a downloadable file.", "warning");
+          return;
+        }
+        currentJobFiles.forEach((file) => window.open(file.url, "_blank"));
       }
 
       async function runSelectedQuery() {
@@ -211,10 +239,47 @@
         toDateInput.value = formatted;
       }
 
+      async function deleteSelectedQuery(queryId) {
+        if (!confirm("Are you sure you want to archive this query?")) {
+          return;
+        }
+        deleteButton.disabled = true;
+        const originalText = deleteButton.textContent;
+        deleteButton.textContent = "Deleting...";
+
+        try {
+          const response = await fetch(`/api/queries/${encodeURIComponent(queryId)}`, {
+            method: "DELETE",
+          });
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(payload.error || "Failed to delete query.");
+          }
+          showMessage("Query archived. Refreshing list...", "success");
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 1200);
+        } catch (error) {
+          console.error(error);
+          showMessage(error.message, "error");
+          deleteButton.disabled = false;
+          deleteButton.textContent = originalText;
+        }
+      }
+
       runButton.addEventListener("click", runSelectedQuery);
       initializeDateInputs();
       resetDisplay();
+      if (initialQueryId) {
+        select.value = initialQueryId;
+      }
+      if (initialQueryId && shouldAutorun) {
+        runSelectedQuery();
+      }
+      select.addEventListener("change", () => {
+        deleteButton.disabled = !select.value;
+        deleteButton.onclick = select.value ? () => deleteSelectedQuery(select.value) : null;
+      });
     </script>
   </body>
 </html>
-

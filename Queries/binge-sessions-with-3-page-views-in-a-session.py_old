@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+"""
+Auto-generated query module.
+
+Generated on 2025-11-08 14:46:26 by generate_query_module.py.
+
+Query Name: Binge sessions with 3+ page views in a session
+Recommended Visualization: Line chart over time
+
+Original SQL:
+    -- Binge sessions with 3+ page views in a session
+
+    -- Replace:
+    --   YOUR_PROJECT.YOUR_DATASET.events_*   with your actual table
+    --   date range filter in _TABLE_SUFFIX   with whatever window you want
+    --   recipe URL/param logic               with your own “recipe” definition
+    --   ad_revenue_event                     with your actual per-event revenue param (or join)
+
+    WITH pageviews AS (
+      SELECT
+        event_date,
+        TIMESTAMP_MICROS(event_timestamp) AS event_ts,
+
+        -- GA4 session identifier (ga_session_id param)
+        (SELECT value.int_value
+         FROM UNNEST(event_params)
+         WHERE key = 'ga_session_id') AS ga_session_id,
+
+        user_pseudo_id,
+
+        -- Useful single session key
+        CONCAT(
+          user_pseudo_id, '.',
+          CAST(
+            (SELECT value.int_value
+             FROM UNNEST(event_params)
+             WHERE key = 'ga_session_id') AS STRING
+          )
+        ) AS full_session_id,
+
+        -- Page-level info
+        (SELECT value.string_value
+         FROM UNNEST(event_params)
+         WHERE key = 'page_location') AS page_url,
+
+        (SELECT value.string_value
+         FROM UNNEST(event_params)
+         WHERE key = 'page_title') AS page_title,
+
+        -- Optional: your recipe-specific fields (custom dims/params)
+        (SELECT value.string_value
+         FROM UNNEST(event_params)
+         WHERE key = 'recipe_slug') AS recipe_slug,
+
+        (SELECT value.string_value
+         FROM UNNEST(event_params)
+         WHERE key = 'recipe_category') AS recipe_category,
+
+        -- Optional: per-event ad revenue if you have it as a param
+        (SELECT value.double_value
+         FROM UNNEST(event_params)
+         WHERE key = 'ad_impression_revenue') AS ad_revenue_event
+      FROM `YOUR_PROJECT.YOUR_DATASET.events_*`
+      WHERE
+        _TABLE_SUFFIX BETWEEN '20251001' AND '20251031'   -- <<< date window
+        AND event_name = 'page_view'
+    ),
+
+    recipe_pageviews AS (
+      SELECT *
+      FROM pageviews
+      WHERE
+        -- Define what counts as a “recipe” page.
+        -- Option A: URL pattern
+        REGEXP_CONTAINS(IFNULL(page_url, ''), r'/recipe')
+        -- Option B: or a recipe-specific param
+        OR recipe_slug IS NOT NULL
+    ),
+
+    session_rollup AS (
+      SELECT
+        full_session_id,
+        user_pseudo_id,
+
+        MIN(event_ts) AS session_start_ts,
+        MAX(event_ts) AS session_end_ts,
+        TIMESTAMP_DIFF(MAX(event_ts), MIN(event_ts), SECOND) AS session_duration_seconds,
+
+        COUNT(*) AS recipe_pageviews,
+        COUNT(DISTINCT recipe_slug) AS distinct_recipes,
+
+        -- First/last recipe in the binge
+        ARRAY_AGG(
+          STRUCT(
+            event_ts,
+            page_url,
+            page_title,
+            recipe_slug,
+            recipe_category
+          )
+          ORDER BY event_ts
+        ) AS recipe_sequence,
+
+        -- Session-level ad revenue (sum of per-event revenue)
+        SUM(IFNULL(ad_revenue_event, 0)) AS total_ad_revenue
+      FROM recipe_pageviews
+      GROUP BY full_session_id, user_pseudo_id
+    ),
+
+    binge_sessions AS (
+      SELECT *
+      FROM session_rollup
+      WHERE recipe_pageviews >= 3   -- <<< “binge” threshold
+    )
+
+    SELECT
+      DATE(session_start_ts) AS session_date,
+      full_session_id,
+      user_pseudo_id,
+
+      recipe_pageviews,
+      distinct_recipes,
+      session_duration_seconds,
+      total_ad_revenue,
+
+      -- Quick pattern fields
+      recipe_sequence[OFFSET(0)].page_url        AS first_page_url,
+      recipe_sequence[OFFSET(0)].recipe_slug     AS first_recipe_slug,
+      recipe_sequence[OFFSET(0)].recipe_category AS first_recipe_category,
+
+      recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].page_url        AS last_page_url,
+      recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].recipe_slug     AS last_recipe_slug,
+      recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].recipe_category AS last_recipe_category,
+
+      -- Full ordered list of recipe hits in this session
+      recipe_sequence
+    FROM binge_sessions
+    ORDER BY total_ad_revenue DESC, session_duration_seconds DESC
+    LIMIT 1000;
+"""
+
+from __future__ import annotations
+
+import argparse
+import os
+from datetime import datetime
+from pathlib import Path
+
+import pandas as pd
+from google.cloud import bigquery
+
+QUERY_NAME = 'Binge sessions with 3+ page views in a session'
+RECOMMENDED_CHART = 'Line chart over time'
+SQL = "-- Binge sessions with 3+ page views in a session\n\n-- Replace:\n--   YOUR_PROJECT.YOUR_DATASET.events_*   with your actual table\n--   date range filter in _TABLE_SUFFIX   with whatever window you want\n--   recipe URL/param logic               with your own “recipe” definition\n--   ad_revenue_event                     with your actual per-event revenue param (or join)\n\nWITH pageviews AS (\n  SELECT\n    event_date,\n    TIMESTAMP_MICROS(event_timestamp) AS event_ts,\n\n    -- GA4 session identifier (ga_session_id param)\n    (SELECT value.int_value\n     FROM UNNEST(event_params)\n     WHERE key = 'ga_session_id') AS ga_session_id,\n\n    user_pseudo_id,\n\n    -- Useful single session key\n    CONCAT(\n      user_pseudo_id, '.',\n      CAST(\n        (SELECT value.int_value\n         FROM UNNEST(event_params)\n         WHERE key = 'ga_session_id') AS STRING\n      )\n    ) AS full_session_id,\n\n    -- Page-level info\n    (SELECT value.string_value\n     FROM UNNEST(event_params)\n     WHERE key = 'page_location') AS page_url,\n\n    (SELECT value.string_value\n     FROM UNNEST(event_params)\n     WHERE key = 'page_title') AS page_title,\n\n    -- Optional: your recipe-specific fields (custom dims/params)\n    (SELECT value.string_value\n     FROM UNNEST(event_params)\n     WHERE key = 'recipe_slug') AS recipe_slug,\n\n    (SELECT value.string_value\n     FROM UNNEST(event_params)\n     WHERE key = 'recipe_category') AS recipe_category,\n\n    -- Optional: per-event ad revenue if you have it as a param\n    (SELECT value.double_value\n     FROM UNNEST(event_params)\n     WHERE key = 'ad_impression_revenue') AS ad_revenue_event\n  FROM `YOUR_PROJECT.YOUR_DATASET.events_*`\n  WHERE\n    _TABLE_SUFFIX BETWEEN '20251001' AND '20251031'   -- <<< date window\n    AND event_name = 'page_view'\n),\n\nrecipe_pageviews AS (\n  SELECT *\n  FROM pageviews\n  WHERE\n    -- Define what counts as a “recipe” page.\n    -- Option A: URL pattern\n    REGEXP_CONTAINS(IFNULL(page_url, ''), r'/recipe')\n    -- Option B: or a recipe-specific param\n    OR recipe_slug IS NOT NULL\n),\n\nsession_rollup AS (\n  SELECT\n    full_session_id,\n    user_pseudo_id,\n\n    MIN(event_ts) AS session_start_ts,\n    MAX(event_ts) AS session_end_ts,\n    TIMESTAMP_DIFF(MAX(event_ts), MIN(event_ts), SECOND) AS session_duration_seconds,\n\n    COUNT(*) AS recipe_pageviews,\n    COUNT(DISTINCT recipe_slug) AS distinct_recipes,\n\n    -- First/last recipe in the binge\n    ARRAY_AGG(\n      STRUCT(\n        event_ts,\n        page_url,\n        page_title,\n        recipe_slug,\n        recipe_category\n      )\n      ORDER BY event_ts\n    ) AS recipe_sequence,\n\n    -- Session-level ad revenue (sum of per-event revenue)\n    SUM(IFNULL(ad_revenue_event, 0)) AS total_ad_revenue\n  FROM recipe_pageviews\n  GROUP BY full_session_id, user_pseudo_id\n),\n\nbinge_sessions AS (\n  SELECT *\n  FROM session_rollup\n  WHERE recipe_pageviews >= 3   -- <<< “binge” threshold\n)\n\nSELECT\n  DATE(session_start_ts) AS session_date,\n  full_session_id,\n  user_pseudo_id,\n\n  recipe_pageviews,\n  distinct_recipes,\n  session_duration_seconds,\n  total_ad_revenue,\n\n  -- Quick pattern fields\n  recipe_sequence[OFFSET(0)].page_url        AS first_page_url,\n  recipe_sequence[OFFSET(0)].recipe_slug     AS first_recipe_slug,\n  recipe_sequence[OFFSET(0)].recipe_category AS first_recipe_category,\n\n  recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].page_url        AS last_page_url,\n  recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].recipe_slug     AS last_recipe_slug,\n  recipe_sequence[ORDINAL(ARRAY_LENGTH(recipe_sequence))].recipe_category AS last_recipe_category,\n\n  -- Full ordered list of recipe hits in this session\n  recipe_sequence\nFROM binge_sessions\nORDER BY total_ad_revenue DESC, session_duration_seconds DESC\nLIMIT 1000;"
+
+
+def run_query(project: str) -> pd.DataFrame:
+    client = bigquery.Client(project=project)
+    job = client.query(SQL)
+    return job.result().to_dataframe(create_bqstorage_client=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=f"Run '{QUERY_NAME}' query")
+    parser.add_argument("--project", default=os.getenv("GCP_PROJECT", "websitecountryspikes"), help="GCP project ID")
+    parser.add_argument(
+        "--output-prefix",
+        default='binge-sessions-with-3-page-views-in-a-session',
+        help="Prefix for CSV output",
+    )
+    parser.add_argument("--start-date", help="Optional date range start label")
+    parser.add_argument("--end-date", help="Optional date range end label")
+    args = parser.parse_args()
+
+    df = run_query(args.project)
+
+    print(f"Query: {QUERY_NAME}")
+    print(f"Recommended visualization: {RECOMMENDED_CHART}")
+    if args.start_date or args.end_date:
+        print(f"Date range: {args.start_date or 'N/A'} -> {args.end_date or 'N/A'}")
+    print(f"Returned {len(df)} rows")
+    print(df.head())
+
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    csv_path = Path(f"{args.output_prefix}_{ts}.csv")
+    df.to_csv(csv_path, index=False)
+    print(f"Saved raw results to {csv_path}")
+
+
+if __name__ == "__main__":
+    main()

@@ -13,6 +13,8 @@ Example:
 """
 
 import argparse
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
@@ -91,20 +93,73 @@ def main():
             and engagement_rate >= args.min_engagement_rate
             and avg_session_duration >= args.min_engagement_seconds
         ):
-            gems.append((views, engagement_rate, avg_session_duration, engaged_sessions, page_url))
+            gems.append(
+                {
+                    "page_views": views,
+                    "engagement_rate": engagement_rate,
+                    "avg_session_duration_seconds": avg_session_duration,
+                    "engaged_sessions": engaged_sessions,
+                    "page_url": page_url,
+                }
+            )
 
     if not gems:
         print("No pages met the criteria.")
         return
 
-    gems.sort(key=lambda x: (x[1], x[2]), reverse=True)
+    gems.sort(key=lambda x: (x["engagement_rate"], x["avg_session_duration_seconds"]), reverse=True)
 
-    for views, engagement_rate, avg_session_duration, engaged_sessions, page_url in gems:
+    for row in gems:
+        views = row["page_views"]
+        engagement_rate = row["engagement_rate"]
+        avg_session_duration = row["avg_session_duration_seconds"]
+        engaged_sessions = row["engaged_sessions"]
+        page_url = row["page_url"]
         minutes, seconds = divmod(int(round(avg_session_duration)), 60)
         print(
             f"{views:>8} {engagement_rate:>17.2%} {minutes:02d}:{seconds:02d}"
             f" {engaged_sessions:>18} {page_url[:60]}"
         )
+
+    try:
+        import pandas as pd  # type: ignore
+
+        df = pd.DataFrame(gems)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        prefix = "hidden_gem_recipes"
+        csv_path = Path(f"{prefix}_{ts}.csv")
+        df.to_csv(csv_path, index=False)
+        print(f"Saved CSV to {csv_path}")
+
+        try:
+            import matplotlib.pyplot as plt  # type: ignore
+
+            if not df.empty:
+                plt.figure(figsize=(14, 7))
+                plt.scatter(
+                    df["page_views"],
+                    df["avg_session_duration_seconds"],
+                    c=df["engagement_rate"],
+                    cmap="viridis",
+                    s=df["engaged_sessions"].clip(lower=1) * 4,
+                )
+                plt.colorbar(label="Engagement Rate")
+                plt.xlabel("Page Views")
+                plt.ylabel("Avg Session Duration (sec)")
+                plt.title("Hidden Gem Recipe Engagement")
+                plt.tight_layout()
+                chart_path = Path(f"{prefix}_{ts}.png")
+                plt.savefig(chart_path)
+                plt.close()
+                print(f"Saved chart to {chart_path}")
+            else:
+                print("Insufficient data to render chart.")
+        except ImportError:
+            print("matplotlib not installed; skipping chart generation.")
+        except Exception as exc:
+            print(f"Failed to build chart: {exc}")
+    except ImportError:
+        print("pandas not installed; skipping CSV/chart generation.")
 
 
 if __name__ == "__main__":

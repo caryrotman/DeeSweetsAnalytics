@@ -13,6 +13,8 @@ Example:
 """
 
 import argparse
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
@@ -85,18 +87,66 @@ def main():
         page_url = row.dimension_values[0].value or "(not set)"
 
         if views >= args.min_views and engagement_rate <= args.max_engagement_rate:
-            flagged.append((views, engagement_rate, avg_session_duration, engaged_sessions, page_url))
+            flagged.append(
+                {
+                    "page_views": views,
+                    "engagement_rate": engagement_rate,
+                    "avg_session_duration_seconds": avg_session_duration,
+                    "engaged_sessions": engaged_sessions,
+                    "page_url": page_url,
+                }
+            )
 
     if not flagged:
         print("No pages met the criteria.")
         return
 
-    for views, engagement_rate, avg_session_duration, engaged_sessions, page_url in flagged:
+    for row in flagged:
+        views = row["page_views"]
+        engagement_rate = row["engagement_rate"]
+        avg_session_duration = row["avg_session_duration_seconds"]
+        engaged_sessions = row["engaged_sessions"]
+        page_url = row["page_url"]
         minutes, seconds = divmod(int(round(avg_session_duration)), 60)
         print(
             f"{views:>12} {engagement_rate:>17.2%} {minutes:02d}:{seconds:02d}"
             f" {engaged_sessions:>18} {page_url[:60]}"
         )
+
+    try:
+        import pandas as pd  # type: ignore
+
+        df = pd.DataFrame(flagged)
+        df.sort_values("page_views", ascending=False, inplace=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        prefix = "high_traffic_low_engagement"
+        csv_path = Path(f"{prefix}_{ts}.csv")
+        df.to_csv(csv_path, index=False)
+        print(f"Saved CSV to {csv_path}")
+
+        try:
+            import matplotlib.pyplot as plt  # type: ignore
+
+            top = df.head(20)
+            if not top.empty:
+                plt.figure(figsize=(14, 7))
+                plt.bar(top["page_url"], top["page_views"], color="#5B4B8A")
+                plt.xticks(rotation=45, ha="right")
+                plt.ylabel("Page Views")
+                plt.title("High Traffic, Low Engagement Pages")
+                plt.tight_layout()
+                chart_path = Path(f"{prefix}_{ts}.png")
+                plt.savefig(chart_path)
+                plt.close()
+                print(f"Saved chart to {chart_path}")
+            else:
+                print("Insufficient data to render chart.")
+        except ImportError:
+            print("matplotlib not installed; skipping chart generation.")
+        except Exception as exc:
+            print(f"Failed to build chart: {exc}")
+    except ImportError:
+        print("pandas not installed; skipping CSV/chart generation.")
 
 
 if __name__ == "__main__":

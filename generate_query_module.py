@@ -46,13 +46,25 @@ def slugify(text: str) -> str:
 
 
 def infer_name(sql: str) -> str:
+    for raw_line in sql.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith("--"):
+            comment = line[2:].strip()
+            if comment:
+                return comment
+            continue
+        break
+
     match = re.search(r"select\s+(.*)\s+from", sql, re.IGNORECASE | re.DOTALL)
     if match:
         select_part = match.group(1)
         first_field = select_part.split(",")[0]
         first_field = re.sub(r"\(.*?\)", "", first_field)  # remove functions
         first_field = first_field.strip().strip("`")
-        return f"{first_field.title()} Analysis"
+        if first_field:
+            return f"{first_field.title()} Analysis"
     return "Custom SQL Query"
 
 
@@ -104,39 +116,87 @@ from google.cloud import bigquery
 QUERY_NAME = {query_name!r}
 RECOMMENDED_CHART = {chart_suggestion!r}
 SQL = {sql!r}
+DEFAULT_PROJECT = os.getenv("GCP_PROJECT", "websitecountryspikes")
+DEFAULT_DATASET = os.getenv("GA_DATASET_ID", "analytics_427048881")
 
 
-def run_query(project: str) -> pd.DataFrame:
+def resolve_sql(project: str, dataset: str) -> str:
+    text = SQL.replace("YOUR_PROJECT", project)
+    text = text.replace("YOUR_DATASET", dataset)
+    return text
+
+
+def run_query(project: str, dataset: str) -> pd.DataFrame:
     client = bigquery.Client(project=project)
-    job = client.query(SQL)
+    rendered_sql = resolve_sql(project, dataset)
+    job = client.query(rendered_sql)
     return job.result().to_dataframe(create_bqstorage_client=True)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=f"Run '{{QUERY_NAME}}' query")
-    parser.add_argument("--project", default=os.getenv("GCP_PROJECT", "websitecountryspikes"), help="GCP project ID")
+    parser.add_argument("--project", default=DEFAULT_PROJECT, help="GCP project ID")
+    parser.add_argument("--dataset", default=DEFAULT_DATASET, help="BigQuery dataset ID (used for placeholder replacement)")
     parser.add_argument(
         "--output-prefix",
         default={base_filename!r},
         help="Prefix for CSV output",
     )
-    parser.add_argument("--date-from", help="Optional date range start label")
-    parser.add_argument("--date-to", help="Optional date range end label")
+    parser.add_argument("--start-date", help="Optional date range start label")
+    parser.add_argument("--end-date", help="Optional date range end label")
     args = parser.parse_args()
 
-    df = run_query(args.project)
+    df = run_query(args.project, args.dataset)
 
-    print(f"Query: {{QUERY_NAME}}")
-    print(f"Recommended visualization: {{RECOMMENDED_CHART}}")
-    if args.date_from or args.date_to:
-        print(f"Date range: {{args.date_from or 'N/A'}} -> {{args.date_to or 'N/A'}}")
-    print(f"Returned {{len(df)}} rows")
+    print(f"Query: {QUERY_NAME}")
+    print(f"Recommended visualization: {RECOMMENDED_CHART}")
+    print(f"Project: {args.project}")
+    print(f"Dataset: {args.dataset}")
+    if args.start_date or args.end_date:
+        print(f"Date range: {args.start_date or 'N/A'} -> {args.end_date or 'N/A'}")
+    print(f"Returned {len(df)} rows")
     print(df.head())
 
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_path = Path(f"{{args.output_prefix}}_{{ts}}.csv")
+    csv_path = Path(f"{args.output_prefix}_{ts}.csv")
     df.to_csv(csv_path, index=False)
-    print(f"Saved raw results to {{csv_path}}")
+    print(f"Saved raw results to {csv_path}")
+
+    chart_path = None
+    try:
+        import matplotlib.pyplot as plt  # type: ignore
+
+        numeric_cols: list[str] = []
+        for column in df.columns:
+            series = df[column]
+            if pd.api.types.is_numeric_dtype(series):
+                numeric_cols.append(column)
+                continue
+            coerced = pd.to_numeric(series, errors="coerce")
+            if coerced.notna().any():
+                df[column] = coerced
+                if pd.api.types.is_numeric_dtype(df[column]):
+                    numeric_cols.append(column)
+
+        if numeric_cols:
+            subset = df[numeric_cols].head(20)
+            if not subset.empty:
+                chart_path = Path(f"{args.output_prefix}_{ts}.png")
+                plt.figure(figsize=(12, 6))
+                subset.plot(ax=plt.gca())
+                plt.title(QUERY_NAME)
+                plt.tight_layout()
+                plt.savefig(chart_path)
+                plt.close()
+                print(f"Saved chart to {chart_path}")
+            else:
+                print("Insufficient data to render chart.")
+        else:
+            print("No numeric columns available to chart.")
+    except ImportError:
+        print("matplotlib not installed; skipping chart generation.")
+    except Exception as exc:
+        print(f"Failed to build chart: {exc}")
 
 
 if __name__ == "__main__":

@@ -34,24 +34,55 @@ header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 4px rgba(31, 41, 51, 0.05);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 header h1 {
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 600;
+}
+
+.header-actions {
+  margin-left: auto;
+}
+
+.header-actions .link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: box-shadow 0.2s ease;
+}
+
+.header-actions .link-button:hover {
+  box-shadow: 0 4px 14px rgba(91, 75, 138, 0.25);
 }
 
 .query-controls {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .date-range {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.date-range .separator {
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .date-range input {
@@ -102,9 +133,36 @@ button {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 button:not(:disabled):hover {
+  box-shadow: 0 4px 14px rgba(91, 75, 138, 0.25);
+}
+
+.danger {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.danger:not(:disabled):hover {
+  box-shadow: 0 4px 14px rgba(185, 28, 28, 0.35);
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: box-shadow 0.2s ease;
+}
+
+.link-button:hover {
   box-shadow: 0 4px 14px rgba(91, 75, 138, 0.25);
 }
 
@@ -265,5 +323,83 @@ main {
   #log-container {
     grid-column: 1 / 2;
   }
+}
+
+.create-query-page {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-query-header {
+  padding: 1.5rem clamp(1rem, 4vw, 3rem);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-query-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.create-query-main {
+  flex: 1;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  justify-content: center;
+}
+
+.create-query-form {
+  width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-query-form textarea {
+  width: 100%;
+  min-height: 420px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.create-query-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 75, 138, 0.2);
+}
+
+.create-query-form button {
+  align-self: flex-start;
+  padding: 0.75rem 2.25rem;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.form-status.success {
+  color: var(--success);
+}
+
+.form-status.error {
+  color: var(--error);
+}
+
+.form-status.warning {
+  color: var(--warning);
 }
 

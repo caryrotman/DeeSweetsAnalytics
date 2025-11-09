@@ -13,6 +13,8 @@ Example:
 
 import argparse
 import math
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
@@ -80,19 +82,67 @@ def main():
         if views < args.min_views:
             continue
         rpm = revenue / views * 1000 if views else math.nan
-        rows.append((page_url, views, revenue, rpm, engaged_sessions))
+        rows.append(
+            {
+                "page_url": page_url,
+                "page_views": views,
+                "total_ad_revenue": revenue,
+                "rpm": rpm,
+                "engaged_sessions": engaged_sessions,
+            }
+        )
 
     if not rows:
         print("No pages met the minimum view threshold.")
         return
 
-    rows.sort(key=lambda x: x[3], reverse=True)
+    rows.sort(key=lambda x: x["rpm"], reverse=True)
 
-    for idx, (page_url, views, revenue, rpm, engaged_sessions) in enumerate(rows, start=1):
+    for idx, row in enumerate(rows, start=1):
+        page_url = row["page_url"]
+        views = row["page_views"]
+        revenue = row["total_ad_revenue"]
+        rpm = row["rpm"]
+        engaged_sessions = row["engaged_sessions"]
         print(
             f"{idx:<5} {page_url[:60]:<60} {views:>10} "
             f"${revenue:>10,.2f} {rpm:>10.2f} {engaged_sessions:>18}"
         )
+
+    try:
+        import pandas as pd  # type: ignore
+
+        df = pd.DataFrame(rows)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        prefix = "rpm_by_recipe"
+        csv_path = Path(f"{prefix}_{ts}.csv")
+        df.to_csv(csv_path, index=False)
+        print(f"Saved CSV to {csv_path}")
+
+        try:
+            import matplotlib.pyplot as plt  # type: ignore
+
+            top = df.head(20)
+            if not top.empty:
+                plt.figure(figsize=(14, 7))
+                plt.barh(top["page_url"], top["rpm"], color="#5B4B8A")
+                plt.xlabel("RPM")
+                plt.ylabel("Page URL")
+                plt.title("Recipe RPM Leaderboard")
+                plt.gca().invert_yaxis()
+                plt.tight_layout()
+                chart_path = Path(f"{prefix}_{ts}.png")
+                plt.savefig(chart_path)
+                plt.close()
+                print(f"Saved chart to {chart_path}")
+            else:
+                print("Insufficient data to render chart.")
+        except ImportError:
+            print("matplotlib not installed; skipping chart generation.")
+        except Exception as exc:
+            print(f"Failed to build chart: {exc}")
+    except ImportError:
+        print("pandas not installed; skipping CSV/chart generation.")
 
 
 if __name__ == "__main__":

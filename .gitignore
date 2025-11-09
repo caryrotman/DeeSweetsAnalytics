@@ -1,5 +1,6 @@
 websitecountryspikes-c44a6b026c7b.json
 webapp/.venv/
+outputs/
 *.pyc
 __pycache__/
 
